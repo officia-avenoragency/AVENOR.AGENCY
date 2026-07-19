@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join AVENOR Creator Network</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0a0a',
+                            charcoal: '#121212',
+                            silver: '#e2e8f0',
+                            neon: '#39FF14',
+                            accent: '#00f0ff',
+                            creator: '#a855f7' /* Purple Accent for Creators */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: linear-gradient(145deg, rgba(25, 25, 25, 0.6) 0%, rgba(10, 10, 10, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+        }
+        .btn-creator {
+            background-color: #a855f7;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-creator:hover {
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-silver font-sans antialiased min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-x-hidden">
+
+    <!-- Background Glow Blobs -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-creator/10 rounded-full blur-[150px] -z-10"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-[150px] -z-10"></div>
+
+    <div class="max-w-2xl w-full space-y-8 relative z-10">
+        <!-- Back to Home Link -->
+        <div class="text-left">
+            <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-brand-creator transition-colors inline-flex items-center gap-2">
+                ← Back to Home
+            </a>
+        </div>
+
+        <!-- Header -->
+        <div class="text-center">
+            <div class="mx-auto w-12 h-12 rounded-xl bg-gradient-to-br from-brand-creator to-purple-800 flex items-center justify-center font-bold text-white text-2xl shadow-lg shadow-brand-creator/20">
+                A
+            </div>
+            <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Monetize Your Influence
+            </h2>
+            <p class="mt-2 text-sm sm:text-base text-gray-400 max-w-md mx-auto">
+                Join the AVENOR Creator Network. Get premium brand deals with guaranteed on-time payouts and 100% transparency.
+            </p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-2xl border-purple-500/20">
+            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Application Received! We will review your profile and get back to you within 48 hours.'); window.location.href='index.html';">
+                
+                <!-- Section: Personal Info -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="full-name" class="block text-sm font-semibold text-gray-300 mb-2">Full Name / Stage Name</label>
+                        <input type="text" id="full-name" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-creator focus:ring-1 focus:ring-brand-creator rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="e.g., Raj Tiwari">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Email Address</label>
+                        <input type="email" id="email" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-creator focus:ring-1 focus:ring-brand-creator rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="you@example.com">
+                    </div>
+                </div>
+
+                <!-- Section: Platform Info -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="platform" class="block text-sm font-semibold text-gray-300 mb-2">Primary Platform</label>
+                        <div class="relative">
+                            <select id="platform" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-creator focus:ring-1 focus:ring-brand-creator rounded-xl px-4 py-3 text-white outline-none transition-all appearance-none">
+                                <option value="" disabled selected>Select platform...</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="youtube">YouTube</option>
+                                <option value="linkedin">LinkedIn</option>
+                                <option value="twitter">Twitter / X</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                ▼
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="handle" class="block text-sm font-semibold text-gray-300 mb-2">Profile Link / Handle</label>
+                        <input type="text" id="handle" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-creator focus:ring-1 focus:ring-brand-creator rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="e.g., @yourhandle or URL">
+                    </div>
+                </div>
+
+                <!-- Section: Stats & Niche -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="followers" class="block text-sm font-semibold text-gray-300 mb-2">Follower Count / Subscribers</label>
+                        <input type="text" id="followers" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-creator focus:ring-1 focus:ring-brand-creator rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="e.g., 50K, 100K+">
+                    </div>
+                    <div>
+                        <label for="niche" class="block text-sm font-semibold text-gray-300 mb-2">Niche / Content Category</label>
+                        <div class="relative">
+                            <select id="niche" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-creator focus:ring-1 focus:ring-brand-creator rounded-xl px-4 py-3 text-white outline-none transition-all appearance-none">
+                                <option value="" disabled selected>Select niche...</option>
+                                <option value="tech">Tech & Gadgets</option>
+                                <option value="finance">Finance & Business</option>
+                                <option value="lifestyle">Lifestyle & Fashion</option>
+                                <option value="gaming">Gaming</option>
+                                <option value="education">Education & Coding</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                ▼
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optional Media Kit Link -->
+                <div>
+                    <label for="media-kit" class="block text-sm font-semibold text-gray-300 mb-2">Media Kit Link or Portfolio <span class="text-gray-500 font-normal">(Optional)</span></label>
+                    <input type="url" id="media-kit" class="w-full bg-black/40 border border-gray-700 focus:border-brand-creator focus:ring-1 focus:ring-brand-creator rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="https://drive.google.com/... or website">
+                </div>
+
+                <!-- Message -->
+                <div>
+                    <label for="message" class="block text-sm font-semibold text-gray-300 mb-2">Tell us a bit about your audience</label>
+                    <textarea id="message" rows="4" class="w-full bg-black/40 border border-gray-700 focus:border-brand-creator focus:ring-1 focus:ring-brand-creator rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600 resize-none" placeholder="What kind of brands do you prefer working with? What is your average engagement rate?"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit" class="w-full btn-creator py-4 rounded-xl font-bold text-lg tracking-wide shadow-lg">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Trust Footer Note -->
+        <p class="text-center text-xs text-gray-600 font-mono tracking-wider uppercase">
+            ⚡ Safe Escrow & Smooth Deliveries • 10% Flat Fee Matrix
+        </p>
+    </div>
+
+</body>
+</html>
