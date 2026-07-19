@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner with AVENOR | Brand Onboarding</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0a0a',
+                            charcoal: '#121212',
+                            silver: '#e2e8f0',
+                            neon: '#39FF14',
+                            accent: '#00f0ff' /* Cyan Accent for Brands */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: linear-gradient(145deg, rgba(25, 25, 25, 0.6) 0%, rgba(10, 10, 10, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+        }
+        .btn-brand {
+            background-color: #00f0ff;
+            color: #0a0a0a;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-brand:hover {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+            transform: scale(1.02);
+            background-color: #33f3ff;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-silver font-sans antialiased min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-x-hidden">
+
+    <!-- Background Glow Blobs -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-brand-accent/10 rounded-full blur-[150px] -z-10"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-neon/5 rounded-full blur-[150px] -z-10"></div>
+
+    <div class="max-w-2xl w-full space-y-8 relative z-10">
+        <!-- Back to Home Link -->
+        <div class="text-left">
+            <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-brand-accent transition-colors inline-flex items-center gap-2">
+                ← Back to Home
+            </a>
+        </div>
+
+        <!-- Header -->
+        <div class="text-center">
+            <div class="mx-auto w-12 h-12 rounded-xl bg-gradient-to-br from-brand-accent to-blue-800 flex items-center justify-center font-bold text-black text-2xl shadow-lg shadow-brand-accent/20">
+                A
+            </div>
+            <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Scale Your Brand
+            </h2>
+            <p class="mt-2 text-sm sm:text-base text-gray-400 max-w-md mx-auto">
+                Connect with premium creators, run high-converting ads, and build robust digital systems. Let's grow your business.
+            </p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-2xl border-brand-accent/20">
+            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Inquiry Submitted! Our team will contact you shortly to schedule a discovery call.'); window.location.href='index.html';">
+                
+                <!-- Section: Company Info -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="company-name" class="block text-sm font-semibold text-gray-300 mb-2">Company / Brand Name</label>
+                        <input type="text" id="company-name" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="e.g., TechNova Inc.">
+                    </div>
+                    <div>
+                        <label for="contact-name" class="block text-sm font-semibold text-gray-300 mb-2">Contact Person Name</label>
+                        <input type="text" id="contact-name" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="e.g., Rahul Sharma">
+                    </div>
+                </div>
+
+                <!-- Section: Contact Details -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="work-email" class="block text-sm font-semibold text-gray-300 mb-2">Work Email Address</label>
+                        <input type="email" id="work-email" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="hello@yourcompany.com">
+                    </div>
+                    <div>
+                        <label for="website" class="block text-sm font-semibold text-gray-300 mb-2">Website / Instagram Link</label>
+                        <input type="url" id="website" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="https://yourwebsite.com">
+                    </div>
+                </div>
+
+                <!-- Section: Goals & Budget -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="primary-goal" class="block text-sm font-semibold text-gray-300 mb-2">Primary Goal</label>
+                        <div class="relative">
+                            <select id="primary-goal" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-xl px-4 py-3 text-white outline-none transition-all appearance-none">
+                                <option value="" disabled selected>Select a goal...</option>
+                                <option value="influencer">Influencer Marketing Campaigns</option>
+                                <option value="performance_ads">Performance Ads (Lead Gen/Sales)</option>
+                                <option value="web_dev">Web Development / App Build</option>
+                                <option value="full_stack">Full Marketing & Tech Overhaul</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                ▼
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="budget" class="block text-sm font-semibold text-gray-300 mb-2">Estimated Monthly Budget</label>
+                        <div class="relative">
+                            <select id="budget" required class="w-full bg-black/40 border border-gray-700 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-xl px-4 py-3 text-white outline-none transition-all appearance-none">
+                                <option value="" disabled selected>Select a range...</option>
+                                <option value="starter">₹10,000 - ₹50,000</option>
+                                <option value="growth">₹50,000 - ₹1,50,000</option>
+                                <option value="scale">₹1,50,000 - ₹5,000,000</option>
+                                <option value="enterprise">₹5,000,000+</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                ▼
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div>
+                    <label for="message" class="block text-sm font-semibold text-gray-300 mb-2">Tell us about your project/requirements</label>
+                    <textarea id="message" rows="4" class="w-full bg-black/40 border border-gray-700 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-xl px-4 py-3 text-white outline-none transition-all placeholder-gray-600 resize-none" placeholder="What specific problem are you looking to solve? Any target audience or specific creators you want to work with?"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit" class="w-full btn-brand py-4 rounded-xl font-bold text-lg tracking-wide shadow-lg">
+                        Request Strategy Call
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Trust Footer Note -->
+        <p class="text-center text-xs text-gray-600 font-mono tracking-wider uppercase">
+            🛡️ ROI-First Approach • Fully Transparent Execution
+        </p>
+    </div>
+
+</body>
+</html>
