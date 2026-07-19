@@ -45,7 +45,6 @@
         }
     </script>
     <style>
-        /* Custom Glassmorphism & UI Effects */
         .glass-nav {
             background: rgba(10, 10, 10, 0.7);
             backdrop-filter: blur(16px);
@@ -63,11 +62,6 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 30px -10px rgba(57, 255, 20, 0.15);
         }
-        .text-gradient {
-            background: linear-gradient(to right, #ffffff, #9ca3af);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
         .btn-neon {
             background-color: #39FF14;
             color: #0a0a0a;
@@ -78,14 +72,6 @@
             box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
             transform: scale(1.02);
         }
-        /* Hide scrollbar for ticker */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
     </style>
 </head>
 <body class="bg-brand-dark text-brand-silver font-sans antialiased overflow-x-hidden selection:bg-brand-neon selection:text-black">
@@ -94,33 +80,22 @@
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer">
                     <div class="w-10 h-10 rounded bg-gradient-to-br from-brand-neon to-brand-accent flex items-center justify-center font-bold text-black text-xl mr-2">
                         A
                     </div>
                     <span class="font-bold text-xl tracking-tight text-white">AVENOR</span>
                 </div>
-                <!-- Center Links (Desktop) -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#services" class="text-sm font-medium hover:text-brand-neon transition-colors">What We Do</a>
                     <a href="#pricing" class="text-sm font-medium hover:text-brand-neon transition-colors">Pricing</a>
-                    <a href="#process" class="text-sm font-medium hover:text-brand-neon transition-colors">Process</a>
-                    <a href="#work" class="text-sm font-medium hover:text-brand-neon transition-colors">Results</a>
+                    <a href="#trust" class="text-sm font-medium hover:text-brand-neon transition-colors">Why Us</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-brand-neon transition-colors">Contact</a>
                 </div>
-                <!-- Right CTA -->
                 <div class="hidden md:flex">
                     <a href="#contact" class="btn-neon px-6 py-2.5 rounded-full font-bold text-sm tracking-wide">
                         Work With Us
                     </a>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-gray-300 hover:text-white focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>
@@ -128,13 +103,11 @@
 
     <!-- 2. HERO SECTION -->
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center">
-        <!-- Background Glow -->
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-neon/10 rounded-full blur-[120px] -z-10"></div>
         <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-accent/10 rounded-full blur-[120px] -z-10"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Left: Content -->
                 <div class="text-left">
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
                         Bridging Brands & Creators. <br>
@@ -153,7 +126,6 @@
                     </div>
                 </div>
                 
-                <!-- Right: Abstract UI/Tech Stack floating animation -->
                 <div class="relative hidden lg:block h-[500px]">
                     <div class="absolute top-10 right-10 glass-card p-6 rounded-2xl w-64 animate-float-slow z-20">
                         <div class="flex items-center gap-4 mb-4">
@@ -173,7 +145,7 @@
                     <div class="absolute bottom-20 left-10 glass-card p-6 rounded-2xl w-72 animate-float-fast z-10 border-brand-accent/30">
                         <div class="flex items-center justify-between mb-4">
                             <p class="text-sm font-semibold text-white">Creator Payouts</p>
-                            <span class="text-brand-accent text-xs font-bold bg-brand-accent/10 px-2 py-1 rounded">On Time</span>
+                            <span class="text-brand-accent text-xs font-bold bg-brand-accent/10 px-2 py-1 rounded">Secured</span>
                         </div>
                         <div class="flex gap-2 items-end h-16">
                             <div class="w-1/6 bg-gray-700 rounded-t h-2/5"></div>
@@ -188,302 +160,170 @@
         </div>
     </section>
 
-    <!-- 3. TRUST TICKER / STACK BAR -->
-    <section class="border-y border-gray-800 bg-brand-charcoal/50 overflow-hidden py-6">
-        <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-            <div class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-                <ul class="flex items-center justify-center gap-12 font-bold text-xl text-gray-500 tracking-wider">
-                    <li>[Influencer Marketing]</li>
-                    <li>[Full-Stack Web Dev]</li>
-                    <li>[Meta Ads]</li>
-                    <li>[Google SEO]</li>
-                    <li>[Brand Collabs]</li>
-                    <li>[AI Automations]</li>
-                    <!-- Duplicate for seamless scroll -->
-                    <li aria-hidden="true">[Influencer Marketing]</li>
-                    <li aria-hidden="true">[Full-Stack Web Dev]</li>
-                    <li aria-hidden="true">[Meta Ads]</li>
-                    <li aria-hidden="true">[Google SEO]</li>
-                    <li aria-hidden="true">[Brand Collabs]</li>
-                    <li aria-hidden="true">[AI Automations]</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. WHAT WE DO (Summary + Services) -->
-    <section id="services" class="py-24">
+    <!-- 3. WHAT WE DO & THE 10% BRIDGE -->
+    <section id="services" class="py-24 bg-brand-charcoal/30 border-y border-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Do</h2>
-                
-                <!-- SUMMARY ADDED HERE -->
-                <div class="bg-gray-900/60 border border-gray-800 p-6 rounded-xl max-w-4xl mx-auto mt-6">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">The AVENOR Ecosystem</h2>
+                <div class="bg-black border border-gray-800 p-6 rounded-xl max-w-4xl mx-auto mt-6 shadow-xl">
                     <p class="text-lg text-gray-300 leading-relaxed">
-                        AVENOR is a <strong>Full-Service Web Development & Marketing Agency</strong>. We specialize in building robust digital platforms and executing high-ROI campaigns. <br><br>
-                        Alongside our tech services, we act as a transparent bridge between <strong>Brands and Creators</strong>. We connect brands with the right influencers, and secure premium deals for creators. We keep it strictly fair by charging a flat <strong>10% commission from both sides</strong>. Zero hidden fees. Just pure growth.
+                        We are a <strong>Full-Service Web Development & Marketing Agency</strong>. But we do things differently. 
+                        Alongside building robust digital platforms, we act as a transparent bridge between <strong>Brands and Creators</strong>. We charge a flat <strong>10% commission</strong> from both sides. No hidden fees. Just pure, scalable growth.
                     </p>
                 </div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Card 1: Web Engineering -->
-                <div class="glass-card p-10 rounded-2xl relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2 relative z-10">Web Development</h3>
-                    <p class="text-brand-neon font-medium mb-6 relative z-10">Apps & Websites That Don't Just Look Good. They Sell.</p>
-                    <ul class="space-y-4 relative z-10 text-gray-300">
-                        <li class="flex items-start">
-                            <span class="text-brand-neon mr-3">▹</span> Custom Full-Stack Web Development
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-neon mr-3">▹</span> E-commerce Architecture
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-neon mr-3">▹</span> Landing Page & Brand Identity Design
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-neon mr-3">▹</span> Automated Telegram/WhatsApp Bots
-                        </li>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-5xl mx-auto">
+                <div class="p-8 rounded-2xl bg-brand-accent/5 border border-brand-accent/20">
+                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-brand-accent text-3xl mr-3">🏢</span> For Brands</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>✔️ Access to verified, high-engagement influencers.</li>
+                        <li>✔️ Automated checks for fake followers/bot engagement.</li>
+                        <li>✔️ Secure escrow payments & guaranteed content delivery.</li>
                     </ul>
                 </div>
-
-                <!-- Card 2: Marketing & Influencers -->
-                <div class="glass-card p-10 rounded-2xl relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2 relative z-10">Marketing & Influencers</h3>
-                    <p class="text-brand-accent font-medium mb-6 relative z-10">Connecting Brands with Revenue & Attention.</p>
-                    <ul class="space-y-4 relative z-10 text-gray-300">
-                        <li class="flex items-start">
-                            <span class="text-brand-accent mr-3">▹</span> Influencer Campaign Management
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-accent mr-3">▹</span> High-Converting Performance Ads
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-accent mr-3">▹</span> SEO & Local SEO
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-accent mr-3">▹</span> Brand-Creator Deal Brokerage (10%)
-                        </li>
+                <div class="p-8 rounded-2xl bg-purple-500/5 border border-purple-500/20">
+                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-purple-400 text-3xl mr-3">🎥</span> For Creators</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>✔️ Direct access to premium, high-paying brand deals.</li>
+                        <li>✔️ Crystal clear briefs—no communication gaps.</li>
+                        <li>✔️ Guaranteed, on-time payments directly to your account.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. TRANSPARENT PRICING MATRIX SECTION -->
-    <section id="pricing" class="py-24 bg-brand-charcoal/30 border-y border-gray-800">
+    <!-- 4. TRANSPARENT PRICING MATRIX -->
+    <section id="pricing" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            
+            <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Web Development Pricing</h2>
-                <p class="text-gray-400 text-lg">No hidden fees. Transparent pricing built for your scale.</p>
+                <p class="text-gray-400 text-lg">Robust architecture built to scale your digital presence.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Pricing Items -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
                 <div class="glass-card p-6 rounded-xl flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-white font-semibold mb-1">Mini Portfolio</h4>
-                        <p class="text-xs text-gray-500 mb-4">Perfect for personal brands.</p>
-                    </div>
+                    <div><h4 class="text-white font-semibold mb-1">Mini Portfolio</h4><p class="text-xs text-gray-500 mb-4">Perfect for personal brands.</p></div>
                     <div class="text-2xl font-bold text-brand-neon">₹999</div>
                 </div>
-                
                 <div class="glass-card p-6 rounded-xl flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-white font-semibold mb-1">Website Speed & SEO Fix</h4>
-                        <p class="text-xs text-gray-500 mb-4">Optimize current setups.</p>
-                    </div>
-                    <div class="text-2xl font-bold text-brand-neon">₹1,499</div>
-                </div>
-
-                <div class="glass-card p-6 rounded-xl flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-white font-semibold mb-1">Single Landing Page</h4>
-                        <p class="text-xs text-gray-500 mb-4">High-conversion focused.</p>
-                    </div>
+                    <div><h4 class="text-white font-semibold mb-1">Single Landing Page</h4><p class="text-xs text-gray-500 mb-4">High-conversion focused.</p></div>
                     <div class="text-2xl font-bold text-brand-neon">₹1,999</div>
                 </div>
-
-                <div class="glass-card p-6 rounded-xl flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-white font-semibold mb-1">Telegram/WhatsApp Bot</h4>
-                        <p class="text-xs text-gray-500 mb-4">Automate your replies.</p>
-                    </div>
-                    <div class="text-2xl font-bold text-brand-neon">₹2,999</div>
-                </div>
-
                 <div class="glass-card p-6 rounded-xl flex flex-col justify-between border-brand-accent/30">
-                    <div>
-                        <h4 class="text-white font-semibold mb-1">Business Website</h4>
-                        <p class="text-xs text-gray-500 mb-4">4-5 pages, fully responsive.</p>
-                    </div>
+                    <div><h4 class="text-white font-semibold mb-1">Business Website</h4><p class="text-xs text-gray-500 mb-4">4-5 pages, responsive.</p></div>
                     <div class="text-2xl font-bold text-brand-accent">₹4,999</div>
                 </div>
-
                 <div class="glass-card p-6 rounded-xl flex flex-col justify-between border-brand-accent/30">
-                    <div>
-                        <h4 class="text-white font-semibold mb-1">Basic E-Commerce</h4>
-                        <p class="text-xs text-gray-500 mb-4">Start selling online.</p>
-                    </div>
-                    <div class="text-2xl font-bold text-brand-accent">₹8,999</div>
-                </div>
-
-                <div class="glass-card p-6 rounded-xl flex flex-col justify-between border-brand-accent/30 lg:col-span-2">
-                    <div>
-                        <div class="flex justify-between items-start">
-                            <h4 class="text-white font-semibold mb-1 text-xl">Full-Stack Web App</h4>
-                            <span class="text-[10px] uppercase tracking-wider bg-white/10 px-2 py-1 rounded text-white">Enterprise</span>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-4">Custom SaaS, Dashboards, and complex architectures.</p>
-                    </div>
-                    <div class="text-3xl font-bold text-white">₹15,000<span class="text-lg text-gray-500">+</span></div>
+                    <div><h4 class="text-white font-semibold mb-1">Full-Stack Web App</h4><p class="text-xs text-gray-500 mb-4">Custom SaaS & Dashboards.</p></div>
+                    <div class="text-3xl font-bold text-white">₹15K<span class="text-lg text-gray-500">+</span></div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- 6. METRIC-DRIVEN CASE STUDIES -->
-    <section id="work" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Real Results, No Assumptions.</h2>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Marketing Retainers</h2>
+                <p class="text-gray-400 text-lg">Stop paying for vanity metrics. Start paying for ROI.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Case Study 1 -->
-                <div class="glass-card p-8 rounded-2xl group hover:bg-gray-900/50">
-                    <div class="flex gap-2 mb-6">
-                        <span class="text-xs bg-brand-neon/10 text-brand-neon px-3 py-1 rounded font-semibold border border-brand-neon/20">Influencer Campaign</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Glow Skincare</h3>
-                    <p class="text-3xl font-black text-brand-neon mb-2">+200%</p>
-                    <p class="text-gray-400 font-medium">Revenue Growth</p>
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-2">Starter Growth Pack</h3>
+                    <p class="text-sm text-gray-400 mb-6">Organic Social Media & Visibility</p>
+                    <div class="text-4xl font-black text-brand-neon mb-6">Custom<span class="text-lg text-gray-500 font-normal"> /mo</span></div>
+                    <ul class="space-y-4 text-gray-300 text-sm mb-8">
+                        <li>✔️ 12-15 Content Pieces (Reels/Graphics)</li>
+                        <li>✔️ Profile Optimization & Setup</li>
+                        <li>✔️ Basic Local SEO (GMB Management)</li>
+                        <li>✔️ Monthly Analytics Report</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-semibold transition-colors">Get Quote</a>
                 </div>
-
-                <!-- Case Study 2 -->
-                <div class="glass-card p-8 rounded-2xl group hover:bg-gray-900/50">
-                    <div class="flex gap-2 mb-6">
-                        <span class="text-xs bg-brand-accent/10 text-brand-accent px-3 py-1 rounded font-semibold border border-brand-accent/20">Performance Ads</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">FitFuel Nutrition</h3>
-                    <p class="text-3xl font-black text-brand-accent mb-2">+150%</p>
-                    <p class="text-gray-400 font-medium">Leads Generated</p>
+                <div class="glass-card p-8 rounded-2xl border-brand-accent/50 relative transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-brand-accent text-black text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">MOST POPULAR</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Performance Booster</h3>
+                    <p class="text-sm text-brand-accent mb-6">Lead Gen & Direct Sales Ads</p>
+                    <div class="text-4xl font-black text-white mb-6">Custom<span class="text-lg text-gray-500 font-normal"> /mo</span></div>
+                    <ul class="space-y-4 text-gray-300 text-sm mb-8">
+                        <li>✔️ Meta & Google Ads Management</li>
+                        <li>✔️ High-Converting Ad Copy & Creative Strategy</li>
+                        <li>✔️ Retargeting Funnel Setup</li>
+                        <li>✔️ Weekly Performance Audits (Targeted ROAS)</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center py-3 rounded-lg bg-brand-accent hover:bg-cyan-400 text-black font-bold transition-colors shadow-[0_0_15px_rgba(0,240,255,0.3)]">Get Quote</a>
                 </div>
-
-                <!-- Case Study 3 -->
-                <div class="glass-card p-8 rounded-2xl group hover:bg-gray-900/50">
-                    <div class="flex gap-2 mb-6">
-                        <span class="text-xs bg-purple-500/10 text-purple-400 px-3 py-1 rounded font-semibold border border-purple-500/20">Social Management</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Urban Streetwear</h3>
-                    <p class="text-3xl font-black text-purple-400 mb-2">+180%</p>
-                    <p class="text-gray-400 font-medium">Engagement Rate</p>
-                </div>
-            </div>
-            
-            <div class="mt-12 flex justify-center gap-8 text-center border-t border-gray-800 pt-8">
-                <div>
-                    <div class="text-3xl font-bold text-white">50+</div>
-                    <div class="text-sm text-gray-500 mt-1">Projects Completed</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-white">20+</div>
-                    <div class="text-sm text-gray-500 mt-1">Happy Clients</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-brand-neon">95%</div>
-                    <div class="text-sm text-gray-500 mt-1">Satisfaction</div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-2">Enterprise Dominance</h3>
+                    <p class="text-sm text-gray-400 mb-6">Full Tech + Marketing Handover</p>
+                    <div class="text-4xl font-black text-purple-400 mb-6">Custom</div>
+                    <ul class="space-y-4 text-gray-300 text-sm mb-8">
+                        <li>✔️ Performance Ads + SEO</li>
+                        <li>✔️ Premium Influencer Tie-ups (10% Network)</li>
+                        <li>✔️ Custom Automation Bots (WhatsApp)</li>
+                        <li>✔️ Priority 24/7 Slack/WhatsApp Support</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-semibold transition-colors">Contact Sales</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. OUR WORKFLOW -->
-    <section id="process" class="py-24 bg-black border-t border-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 5. TRUST BUILDERS -->
+    <section id="trust" class="py-24 bg-black border-t border-gray-900">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">How We Work</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Why Trust AVENOR?</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Step 1 -->
-                <div class="relative">
-                    <div class="text-6xl font-black text-gray-800/50 absolute -top-8 -left-4 z-0">01</div>
-                    <div class="relative z-10">
-                        <h4 class="text-xl font-bold text-white mb-3">Discovery & Audit</h4>
-                        <p class="text-gray-400">We understand your brand needs, whether it's building a web app or finding the perfect influencer.</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-gray-900/50 border border-gray-800 p-8 rounded-2xl hover:border-brand-neon/50 transition-colors">
+                    <div class="w-12 h-12 bg-brand-neon/10 rounded-lg flex items-center justify-center text-brand-neon text-2xl mb-6">🛡️</div>
+                    <h4 class="text-xl font-bold text-white mb-3">The "No-BS" Guarantee</h4>
+                    <p class="text-gray-400 mb-4"><strong>Tech:</strong> 30-Day Zero-Bug Policy. Website launch ke baad 30 dino tak koi bhi bug fix aur tech support bilkul FREE.</p>
+                    <p class="text-gray-400"><strong>Marketing:</strong> ROI-First Commitment. Agar humne pehle mahine ke core targets hit nahi kiye, toh hum campaign ko tab tak free me optimize karenge jab tak results na aayein.</p>
                 </div>
-                <!-- Step 2 -->
-                <div class="relative">
-                    <div class="text-6xl font-black text-gray-800/50 absolute -top-8 -left-4 z-0">02</div>
-                    <div class="relative z-10">
-                        <h4 class="text-xl font-bold text-white mb-3">Development & Deal Booking</h4>
-                        <p class="text-gray-400">We code your platform or finalize the brand-creator contracts securely from our end.</p>
-                    </div>
-                </div>
-                <!-- Step 3 -->
-                <div class="relative">
-                    <div class="text-6xl font-black text-gray-800/50 absolute -top-8 -left-4 z-0">03</div>
-                    <div class="relative z-10">
-                        <h4 class="text-xl font-bold text-white mb-3">Launch & Growth</h4>
-                        <p class="text-gray-400">Going live, tracking real data, and scaling revenue aggressively.</p>
-                    </div>
+                <div class="bg-gray-900/50 border border-gray-800 p-8 rounded-2xl hover:border-brand-accent/50 transition-colors">
+                    <div class="w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center text-brand-accent text-2xl mb-6">📱</div>
+                    <h4 class="text-xl font-bold text-white mb-3">Always in the Loop</h4>
+                    <p class="text-gray-400 mb-4">Paisa dekar update ke liye rona nahi padega. Onboarding hote hi aapke liye ek private <strong>WhatsApp/Telegram group</strong> banega.</p>
+                    <p class="text-gray-400">Direct team access anytime, plus clean weekly reports taaki aapko pata ho aapka ek-ek rupya kahan lag raha hai.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 8. FORMS & LEAD CAPTURE ENGINE -->
+    <!-- 6. FORMS & LEAD CAPTURE -->
     <section id="contact" class="py-24 relative overflow-hidden">
-        <!-- Glow effects -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-3xl bg-brand-neon/5 blur-[150px] rounded-full -z-10"></div>
         
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="glass-card p-10 md:p-14 rounded-3xl text-center border-gray-700 shadow-2xl">
                 
                 <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Let's Build Your Digital Presence</h2>
-                <p class="text-gray-400 mb-10 max-w-2xl mx-auto">Need a high-performing website? Fill out the form below. Looking for brand deals or creator collaborations? Join our network.</p>
+                <p class="text-gray-400 mb-10 max-w-2xl mx-auto">Need a high-performing website or a marketing overhaul? Fill out the form below. Looking for brand deals or creator collaborations? Join our network.</p>
                 
-                <!-- WEB DEVELOPMENT INQUIRY FORM -->
-                <form class="max-w-lg mx-auto text-left bg-black/60 p-6 sm:p-8 rounded-2xl border border-gray-800 shadow-lg" onsubmit="event.preventDefault(); alert('Web Development Request Submitted!');">
+                <form class="max-w-lg mx-auto text-left bg-black/60 p-6 sm:p-8 rounded-2xl border border-gray-800 shadow-lg" onsubmit="event.preventDefault(); alert('Request Submitted! We will contact you soon.');">
                     <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-brand-neon">💻</span> Web Development Inquiry
+                        <span class="text-brand-neon">🚀</span> Project Inquiry Form
                     </h3>
                     
                     <div class="space-y-5">
                         <div>
                             <label class="block text-sm font-medium text-gray-300 mb-1" for="name">Full Name</label>
-                            <input type="text" id="name" required class="w-full bg-black/50 border border-gray-700 focus:border-brand-neon focus:ring-1 focus:ring-brand-neon rounded-lg px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="John Doe">
+                            <input type="text" id="name" required class="w-full bg-black/50 border border-gray-700 focus:border-brand-neon focus:ring-1 focus:ring-brand-neon rounded-lg px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="Your Name">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-300 mb-1" for="email">Email Address</label>
                             <input type="email" id="email" required class="w-full bg-black/50 border border-gray-700 focus:border-brand-neon focus:ring-1 focus:ring-brand-neon rounded-lg px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="hello@company.com">
                         </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="phone">Phone Number</label>
-                            <input type="tel" id="phone" required class="w-full bg-black/50 border border-gray-700 focus:border-brand-neon focus:ring-1 focus:ring-brand-neon rounded-lg px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="+91 9876543210">
-                        </div>
                         
                         <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="project_type">What kind of website do you need?</label>
-                            <select id="project_type" required class="w-full bg-black/50 border border-gray-700 focus:border-brand-neon focus:ring-1 focus:ring-brand-neon rounded-lg px-4 py-3 text-white outline-none transition-all appearance-none">
-                                <option value="" disabled selected>Select a package...</option>
-                                <option value="portfolio">Mini Portfolio (₹999)</option>
-                                <option value="landing">Single Landing Page (₹1,999)</option>
-                                <option value="bot">Telegram/WhatsApp Bot (₹2,999)</option>
-                                <option value="business">Business Website (₹4,999)</option>
-                                <option value="ecommerce">Basic E-Commerce (₹8,999)</option>
-                                <option value="fullstack">Full-Stack Web App (₹15,000+)</option>
-                                <option value="other">Other / Custom</option>
+                            <label class="block text-sm font-medium text-gray-300 mb-1" for="service_type">What do you need help with?</label>
+                            <select id="service_type" required class="w-full bg-black/50 border border-gray-700 focus:border-brand-neon focus:ring-1 focus:ring-brand-neon rounded-lg px-4 py-3 text-white outline-none transition-all appearance-none">
+                                <option value="" disabled selected>Select a service...</option>
+                                <option value="web">Web Development (App/Website)</option>
+                                <option value="marketing">Performance Marketing & Ads</option>
+                                <option value="both">Both (Full Tech & Marketing)</option>
                             </select>
                         </div>
 
@@ -493,14 +333,12 @@
                     </div>
                 </form>
 
-                <!-- DIVIDER -->
                 <div class="my-12 flex items-center justify-center opacity-60">
                     <div class="h-px bg-gray-600 w-1/4 sm:w-1/3"></div>
-                    <span class="mx-4 text-gray-400 font-bold text-sm tracking-widest">OR COLLABORATE WITH US</span>
+                    <span class="mx-4 text-gray-400 font-bold text-sm tracking-widest text-center whitespace-nowrap">OR JOIN THE NETWORK</span>
                     <div class="h-px bg-gray-600 w-1/4 sm:w-1/3"></div>
                 </div>
 
-                <!-- BRAND & CREATOR BUTTONS -->
                 <div class="flex flex-col sm:flex-row justify-center gap-6 max-w-2xl mx-auto">
                     <a href="#brand-form-link" class="flex-1 px-8 py-5 bg-brand-accent/10 border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-black rounded-xl font-bold text-lg transition-all shadow-[0_0_15px_rgba(0,240,255,0.1)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] flex items-center justify-center gap-2">
                         🏢 Join as Brand
@@ -509,13 +347,13 @@
                         🎥 Join as Creator
                     </a>
                 </div>
-                <p class="text-xs text-gray-500 mt-6">*We charge a flat 10% commission on successful brand-creator deals.</p>
+                <p class="text-xs text-gray-500 mt-6">*We charge a flat 10% commission on successful brand-creator deals. Full transparency.</p>
 
             </div>
         </div>
     </section>
 
-    <!-- 9. FOOTER -->
+    <!-- 7. FOOTER -->
     <footer class="bg-black py-10 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
             <div class="text-gray-500 text-sm mb-4 md:mb-0">
