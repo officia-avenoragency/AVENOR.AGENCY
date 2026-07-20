@@ -34,12 +34,12 @@ const leadSchema = new mongoose.Schema({
 
 const Lead = mongoose.models.Lead || mongoose.model('Lead', leadSchema);
 
-// Home Route (Health Check - Browser ke liye)
+// Home Route (Health Check)
 app.get('/', (req, res) => {
     res.send('🚀 AVENOR Backend API is Live and Running on Vercel!');
 });
 
-// Submit Lead API (Website Form ke liye)
+// Submit Lead API
 app.post('/api/submit-lead', async (req, res) => {
     try {
         await connectDB();
@@ -49,21 +49,19 @@ app.post('/api/submit-lead', async (req, res) => {
         const newLead = new Lead({ source, name, email, socialLink, requirements });
         await newLead.save();
 
-        // 2. Telegram par notification bhejo
-        const botToken = process.env.WEBSITE_BOT_TOKEN;
-        const chatId = process.env.ADMIN_CHAT_ID;
+        // 2. Telegram Notification (Hardcoded Token & Chat ID)
+        const botToken = '8864663247:AAGh7p-XdXSuytxvQKzm8bU5iO0ay_R1ksw';
+        const chatId = '8769016149';
 
-        if (botToken && chatId) {
-            const message = `🚀 *NEW LEAD ALERT* 🚀\n━━━━━━━━━━━━━━━━━━\n📌 *Source:* ${source}\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n🔗 *Link:* ${socialLink}\n📝 *Details:* ${requirements}`;
+        const message = `🚀 *NEW LEAD ALERT* 🚀\n━━━━━━━━━━━━━━━━━━\n📌 *Source:* ${source}\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n🔗 *Link:* ${socialLink}\n📝 *Details:* ${requirements}`;
 
-            await axios.post(`https://api.telegram.org/bot${8864663247:AAGh7p-XdXSuytxvQKzm8bU5iO0ay_R1ksw}/sendMessage`, {
-                chat_id: 8769016149,
-                text: message,
-                parse_mode: 'Markdown'
-            });
-        }
+        await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'Markdown'
+        });
 
-        return res.status(200).json({ success: true, message: 'Lead saved successfully!' });
+        return res.status(200).json({ success: true, message: 'Lead saved and notification sent!' });
 
     } catch (error) {
         console.error('API Error:', error);
