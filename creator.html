@@ -77,7 +77,7 @@
 
         <!-- Form Card -->
         <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-2xl border-purple-500/20">
-            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Application Received! We will review your profile and get back to you within 48 hours.'); window.location.href='index.html';">
+            <form id="creatorForm" class="space-y-6">; window.location.href='index.html';">
                 
                 <!-- Section: Personal Info -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -165,6 +165,43 @@
             ⚡ Safe Escrow & Smooth Deliveries • 10% Flat Fee Matrix
         </p>
     </div>
+<script>
+    document.getElementById('creatorForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Submitting Profile... ⏳';
+        submitBtn.disabled = true;
 
+        const payload = {
+            source: 'Creator',
+            name: document.getElementById('full-name').value,
+            email: document.getElementById('email').value,
+            socialLink: document.getElementById('handle').value,
+            requirements: `Platform: ${document.getElementById('platform').value} | Followers: ${document.getElementById('followers').value} | Niche: ${document.getElementById('niche').value} | Media Kit: ${document.getElementById('media-kit').value || 'None'} | Message: ${document.getElementById('message').value || 'None'}`
+        };
+
+        try {
+            const response = await fetch('http://localhost:3000/api/submit-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                alert('Application Received! We will review your profile.');
+                window.location.href = 'index.html';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Connection failed. Is the server running?');
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+</script>
 </body>
 </html>
