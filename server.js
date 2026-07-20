@@ -6,22 +6,25 @@ const axios = require('axios');
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
-// Test Endpoint (Browser me status check karne ke liye)
-app.get('/', (req, res) => {
-    res.send('🚀 AVENOR Backend API is Running Successfully!');
-});
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('✅ MongoDB Connected Successfully!'))
-  .catch((err) => console.error('❌ MongoDB Connection Error:', err));
+// Serverless DB Connection Caching (Crash hone se bachayega)
+let isConnected = false;
+async function connectDB() {
+    if (isConnected) return;
+    try {
+        const db = await mongoose.connect(process.env.MONGO_URI);
+        isConnected = db.connections[0].readyState;
+        console.log('✅ MongoDB Connected');
+    } catch (err) {
+        console.error('❌ DB Connection Error:', err);
+    }
+}
 
-// Database Schema (Table Structure)
+// Database Schema
 const leadSchema = new mongoose.Schema({
-    source: String, // 'Brand', 'Creator', or 'WebDev'
+    source: String,
     name: String,
     email: String,
     socialLink: String,
@@ -29,19 +32,29 @@ const leadSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now }
 });
 
-const Lead = mongoose.model('Lead', leadSchema);
+const Lead = mongoose.models.Lead || mongoose.model('Lead', leadSchema);
 
-// API Endpoint: Website se data receive karne ke liye
+// Home Route (Health Check)
+app.get('/', (req, res) => {
+    res.send('🚀 AVENOR Backend API is Live and Running on Vercel!');
+});
+
+// Submit Lead API
 app.post('/api/submit-lead', async (req, res) => {
     try {
+        await connectDB();
         const { source, name, email, socialLink, requirements } = req.body;
 
-        // 1. Data ko MongoDB me save karo
+        // 1. Save to Database
         const newLead = new Lead({ source, name, email, socialLink, requirements });
         await newLead.save();
 
-        // 2. Telegram Notification ka message banao
-        const message = `
+        // 2. Telegram Notification
+        const botToken = process.env.WEBSITE_BOT_TOKEN;
+        const chatId = process.env.ADMIN_CHAT_ID;
+
+        if (botToken && chatId) {
+            const message = `
 🚀 *NEW LEAD ALERT* 🚀
 ━━━━━━━━━━━━━━━━━━
 📌 *Source:* ${source}
@@ -49,30 +62,22 @@ app.post('/api/submit-lead', async (req, res) => {
 📧 *Email:* ${email}
 🔗 *Link:* ${socialLink}
 📝 *Details:* ${requirements}
-        `;
+            `;
 
-        // 3. Telegram Bot ke through tumhe message bhejo
-        const botToken = process.env.8864663247:AAGh7p-XdXSuytxvQKzm8bU5iO0ay_R1ksw;
-        const chatId = process.env.8710563223;
-        const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+            await axios.post(`https://api.telegram.org/bot${8864663247:AAGh7p-XdXSuytxvQKzm8bU5iO0ay_R1ksw}/sendMessage`, {
+                chat_id: 8710563223,
+                text: message,
+                parse_mode: 'Markdown'
+            });
+        }
 
-        await axios.post(telegramUrl, {
-            chat_id: chatId,
-            text: message,
-            parse_mode: 'Markdown'
-        });
-
-        res.status(200).json({ success: true, message: 'Data saved and notification sent!' });
+        return res.status(200).json({ success: true, message: 'Lead saved successfully!' });
 
     } catch (error) {
-        console.error('Error saving lead:', error);
-        res.status(500).json({ success: false, message: 'Server Error' });
+        console.error('API Error:', error);
+        return res.status(500).json({ success: false, error: error.message });
     }
 });
 
-// Server Start Karna
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`🚀 Server is running on http://localhost:${PORT}`);
-});
+// Export for Vercel
 module.exports = app;
