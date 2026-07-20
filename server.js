@@ -56,8 +56,8 @@ app.post('/api/submit-lead', async (req, res) => {
         if (botToken && chatId) {
             const message = `🚀 *NEW LEAD ALERT* 🚀\n━━━━━━━━━━━━━━━━━━\n📌 *Source:* ${source}\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n🔗 *Link:* ${socialLink}\n📝 *Details:* ${requirements}`;
 
-            await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-                chat_id: chatId,
+            await axios.post(`https://api.telegram.org/bot${8864663247:AAGh7p-XdXSuytxvQKzm8bU5iO0ay_R1ksw}/sendMessage`, {
+                chat_id: 8769016149,
                 text: message,
                 parse_mode: 'Markdown'
             });
