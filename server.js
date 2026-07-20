@@ -9,6 +9,10 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+// Test Endpoint (Browser me status check karne ke liye)
+app.get('/', (req, res) => {
+    res.send('🚀 AVENOR Backend API is Running Successfully!');
+});
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
