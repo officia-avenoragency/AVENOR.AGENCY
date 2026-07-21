@@ -22,11 +22,12 @@ async function connectDB() {
     }
 }
 
-// Database Schema
+// Database Schema (Phone Number Added)
 const leadSchema = new mongoose.Schema({
     source: String,
     name: String,
     email: String,
+    phone: String,
     socialLink: String,
     requirements: String,
     date: { type: Date, default: Date.now }
@@ -34,7 +35,7 @@ const leadSchema = new mongoose.Schema({
 
 const Lead = mongoose.models.Lead || mongoose.model('Lead', leadSchema);
 
-// Home Route (Health Check)
+// Home Route
 app.get('/', (req, res) => {
     res.send('🚀 AVENOR Backend API is Live and Running on Vercel!');
 });
@@ -43,17 +44,17 @@ app.get('/', (req, res) => {
 app.post('/api/submit-lead', async (req, res) => {
     try {
         await connectDB();
-        const { source, name, email, socialLink, requirements } = req.body;
+        const { source, name, email, phone, socialLink, requirements } = req.body;
 
-        // 1. Database me save karo
-        const newLead = new Lead({ source, name, email, socialLink, requirements });
+        // 1. Save to MongoDB
+        const newLead = new Lead({ source, name, email, phone, socialLink, requirements });
         await newLead.save();
 
-        // 2. Telegram Notification (Hardcoded Token & Chat ID)
+        // 2. Telegram Notification with Phone Number
         const botToken = '8864663247:AAGh7p-XdXSuytxvQKzm8bU5iO0ay_R1ksw';
         const chatId = '8769016149';
 
-        const message = `🚀 *NEW LEAD ALERT* 🚀\n━━━━━━━━━━━━━━━━━━\n📌 *Source:* ${source}\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n🔗 *Link:* ${socialLink}\n📝 *Details:* ${requirements}`;
+        const message = `🚀 *NEW LEAD ALERT* 🚀\n━━━━━━━━━━━━━━━━━━\n📌 *Source:* ${source}\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n📞 *Phone:* ${phone || 'Not Provided'}\n🔗 *Link:* ${socialLink}\n📝 *Details:* ${requirements}`;
 
         await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
             chat_id: chatId,
@@ -69,5 +70,4 @@ app.post('/api/submit-lead', async (req, res) => {
     }
 });
 
-// Export for Vercel
 module.exports = app;
