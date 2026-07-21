@@ -72,6 +72,20 @@
             box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
             transform: scale(1.02);
         }
+        .process-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -1.5rem;
+            width: 1.5rem;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        @media (max-width: 768px) {
+            .process-line::after {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="bg-brand-dark text-brand-silver font-sans antialiased overflow-x-hidden selection:bg-brand-neon selection:text-black">
@@ -88,9 +102,10 @@
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#services" class="text-sm font-medium hover:text-brand-neon transition-colors">What We Do</a>
+                    <a href="#full-services" class="text-sm font-medium hover:text-brand-neon transition-colors">Services</a>
                     <a href="#pricing" class="text-sm font-medium hover:text-brand-neon transition-colors">Pricing</a>
+                    <a href="#process" class="text-sm font-medium hover:text-brand-neon transition-colors">Process</a>
                     <a href="#trust" class="text-sm font-medium hover:text-brand-neon transition-colors">Why Us</a>
-                    <a href="#contact" class="text-sm font-medium hover:text-brand-neon transition-colors">Contact</a>
                 </div>
                 <div class="hidden md:flex">
                     <a href="#contact" class="btn-neon px-6 py-2.5 rounded-full font-bold text-sm tracking-wide">
@@ -173,8 +188,8 @@
                 </div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-5xl mx-auto">
-                <div class="p-8 rounded-2xl bg-brand-accent/5 border border-brand-accent/20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div class="p-8 rounded-2xl bg-brand-accent/5 border border-brand-accent/20 hover:border-brand-accent/50 transition-colors">
                     <h3 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-brand-accent text-3xl mr-3">🏢</span> For Brands</h3>
                     <ul class="space-y-3 text-gray-300">
                         <li>✔️ Access to verified, high-engagement influencers.</li>
@@ -182,7 +197,7 @@
                         <li>✔️ Secure escrow payments & guaranteed content delivery.</li>
                     </ul>
                 </div>
-                <div class="p-8 rounded-2xl bg-purple-500/5 border border-purple-500/20">
+                <div class="p-8 rounded-2xl bg-purple-500/5 border border-purple-500/20 hover:border-purple-500/50 transition-colors">
                     <h3 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-purple-400 text-3xl mr-3">🎥</span> For Creators</h3>
                     <ul class="space-y-3 text-gray-300">
                         <li>✔️ Direct access to premium, high-paying brand deals.</li>
@@ -194,10 +209,120 @@
         </div>
     </section>
 
-    <!-- 4. TRANSPARENT PRICING MATRIX -->
+    <!-- 4. OUR COMPREHENSIVE SERVICES -->
+    <section id="full-services" class="py-24 relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-[150px] -z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Everything You Need To Scale</h2>
+                <p class="text-gray-400 text-lg">End-to-end solutions combining robust tech and aggressive marketing.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Digital Marketing Sub-Services -->
+                <div class="glass-card p-8 rounded-3xl border-t-4 border-t-brand-accent">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent text-3xl">
+                            🚀
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Digital Marketing</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Performance Marketing</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Google Ads</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Facebook Ads</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Instagram Ads</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> SEO</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Local SEO</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Social Media Marketing</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Influencer Marketing</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> WhatsApp Marketing</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Email Marketing</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Content Marketing</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Branding</div>
+                    </div>
+                </div>
+
+                <!-- Web Development Sub-Services -->
+                <div class="glass-card p-8 rounded-3xl border-t-4 border-t-brand-neon">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 bg-brand-neon/10 rounded-2xl flex items-center justify-center text-brand-neon text-3xl">
+                            💻
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Web Development</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Business Website</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Landing Page</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Portfolio Website</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Ecommerce Website</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> SaaS Website</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Dashboard</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> CRM</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Web App</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> UI/UX Design</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Speed Optimization</div>
+                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Website Maintenance</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. OUR PROCESS -->
+    <section id="process" class="py-24 bg-brand-charcoal/30 border-y border-gray-900 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-16">How We Make It Happen</h2>
+            
+            <div class="flex flex-wrap justify-center gap-y-10 gap-x-4">
+                <!-- Step 1 to 9 Details remain same as before -->
+                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
+                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-brand-neon group-hover:shadow-[0_0_15px_#39FF14] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">1</div>
+                    <p class="text-gray-300 font-medium">Discovery</p>
+                </div>
+                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
+                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-brand-neon group-hover:shadow-[0_0_15px_#39FF14] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">2</div>
+                    <p class="text-gray-300 font-medium">Research</p>
+                </div>
+                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
+                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-brand-neon group-hover:shadow-[0_0_15px_#39FF14] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">3</div>
+                    <p class="text-gray-300 font-medium">Strategy</p>
+                </div>
+                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
+                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-brand-accent group-hover:shadow-[0_0_15px_#00f0ff] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">4</div>
+                    <p class="text-gray-300 font-medium">Design</p>
+                </div>
+                <div class="relative w-32 md:w-40 flex flex-col items-center group md:process-line lg:process-line">
+                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-brand-accent group-hover:shadow-[0_0_15px_#00f0ff] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">5</div>
+                    <p class="text-gray-300 font-medium">Development</p>
+                </div>
+                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
+                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-purple-400 group-hover:shadow-[0_0_15px_#c084fc] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">6</div>
+                    <p class="text-gray-300 font-medium">Testing</p>
+                </div>
+                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
+                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-purple-400 group-hover:shadow-[0_0_15px_#c084fc] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">7</div>
+                    <p class="text-gray-300 font-medium">Launch</p>
+                </div>
+                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
+                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-yellow-400 group-hover:shadow-[0_0_15px_#facc15] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">8</div>
+                    <p class="text-gray-300 font-medium">Marketing</p>
+                </div>
+                <div class="relative w-32 md:w-40 flex flex-col items-center group">
+                    <div class="w-16 h-16 rounded-full bg-brand-neon border-2 border-brand-neon shadow-[0_0_20px_#39FF14] flex items-center justify-center text-xl font-bold text-black mb-4 transition-all z-10">🚀</div>
+                    <p class="text-brand-neon font-bold">Growth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TRANSPARENT PRICING MATRIX -->
     <section id="pricing" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Web Development Pricing</h2>
                 <p class="text-gray-400 text-lg">Robust architecture built to scale your digital presence.</p>
@@ -236,7 +361,6 @@
                         <li>✔️ Basic Local SEO (GMB Management)</li>
                         <li>✔️ Monthly Analytics Report</li>
                     </ul>
-                    <a href="#contact" class="block w-full text-center py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-semibold transition-colors">Get Quote</a>
                 </div>
                 <div class="glass-card p-8 rounded-2xl border-brand-accent/50 relative transform md:-translate-y-4">
                     <div class="absolute top-0 right-0 bg-brand-accent text-black text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">MOST POPULAR</div>
@@ -249,7 +373,6 @@
                         <li>✔️ Retargeting Funnel Setup</li>
                         <li>✔️ Weekly Performance Audits (Targeted ROAS)</li>
                     </ul>
-                    <a href="#contact" class="block w-full text-center py-3 rounded-lg bg-brand-accent hover:bg-cyan-400 text-black font-bold transition-colors shadow-[0_0_15px_rgba(0,240,255,0.3)]">Get Quote</a>
                 </div>
                 <div class="glass-card p-8 rounded-2xl">
                     <h3 class="text-2xl font-bold text-white mb-2">Enterprise Dominance</h3>
@@ -259,113 +382,120 @@
                         <li>✔️ Performance Ads + SEO</li>
                         <li>✔️ Premium Influencer Tie-ups (10% Network)</li>
                         <li>✔️ Custom Automation Bots (WhatsApp)</li>
-                        <li>✔️ Priority 24/7 Slack/WhatsApp Support</li>
+                        <li>✔️ Priority 24/7 Support</li>
                     </ul>
-                    <a href="#contact" class="block w-full text-center py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-semibold transition-colors">Contact Sales</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. TRUST BUILDERS -->
+    <!-- 7. WHY CHOOSE US & TRUST BUILDERS -->
     <section id="trust" class="py-24 bg-black border-t border-gray-900">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Why Trust AVENOR?</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Why Choose Us</h2>
+                <p class="text-gray-400 text-lg">We don't just deliver projects, we partner in your growth.</p>
             </div>
-
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+                <div class="glass-card p-4 rounded-xl flex flex-col items-center justify-center text-center hover:border-brand-neon/40">
+                    <div class="text-brand-neon text-2xl font-bold mb-2">✓</div><h4 class="text-white font-semibold text-sm">ROI Focused</h4>
+                </div>
+                <div class="glass-card p-4 rounded-xl flex flex-col items-center justify-center text-center hover:border-brand-neon/40">
+                    <div class="text-brand-neon text-2xl font-bold mb-2">✓</div><h4 class="text-white font-semibold text-sm">Experienced Team</h4>
+                </div>
+                <div class="glass-card p-4 rounded-xl flex flex-col items-center justify-center text-center hover:border-brand-neon/40">
+                    <div class="text-brand-neon text-2xl font-bold mb-2">✓</div><h4 class="text-white font-semibold text-sm">Transparent Pricing</h4>
+                </div>
+                <div class="glass-card p-4 rounded-xl flex flex-col items-center justify-center text-center hover:border-brand-neon/40">
+                    <div class="text-brand-neon text-2xl font-bold mb-2">✓</div><h4 class="text-white font-semibold text-sm">Fast Delivery</h4>
+                </div>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div class="bg-gray-900/50 border border-gray-800 p-8 rounded-2xl hover:border-brand-neon/50 transition-colors">
                     <div class="w-12 h-12 bg-brand-neon/10 rounded-lg flex items-center justify-center text-brand-neon text-2xl mb-6">🛡️</div>
                     <h4 class="text-xl font-bold text-white mb-3">The "No-BS" Guarantee</h4>
-                    <p class="text-gray-400 mb-4"><strong>Tech:</strong> 30-Day Zero-Bug Policy. Website launch ke baad 30 dino tak koi bhi bug fix aur tech support bilkul FREE.</p>
-                    <p class="text-gray-400"><strong>Marketing:</strong> ROI-First Commitment. Agar humne pehle mahine ke core targets hit nahi kiye, toh hum campaign ko tab tak free me optimize karenge jab tak results na aayein.</p>
+                    <p class="text-gray-400 mb-4"><strong>Tech:</strong> 30-Day Zero-Bug Policy. Launch ke baad 30 dino tak FREE support.</p>
+                    <p class="text-gray-400"><strong>Marketing:</strong> ROI-First Commitment. Result aane tak optimizations bilkul free.</p>
                 </div>
                 <div class="bg-gray-900/50 border border-gray-800 p-8 rounded-2xl hover:border-brand-accent/50 transition-colors">
-                    <div class="w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center text-brand-accent text-2xl mb-6">📱</div>
-                    <h4 class="text-xl font-bold text-white mb-3">Always in the Loop</h4>
-                    <p class="text-gray-400 mb-4">Paisa dekar update ke liye rona nahi padega. Onboarding hote hi aapke liye ek private <strong>WhatsApp/Telegram group</strong> banega.</p>
-                    <p class="text-gray-400">Direct team access anytime, plus clean weekly reports taaki aapko pata ho aapka ek-ek rupya kahan lag raha hai.</p>
+                    <div class="w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center text-brand-accent text-2xl mb-6">🤝</div>
+                    <h4 class="text-xl font-bold text-white mb-3">100% Escrow & Transparency</h4>
+                    <p class="text-gray-400 mb-4"><strong>Brands:</strong> Milestones approve hone ke baad hi payout jata hai. Zero hidden margins.</p>
+                    <p class="text-gray-400"><strong>Creators:</strong> Brief fulfill hone par instant 100% payout guarantee.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. FORMS & LEAD CAPTURE -->
-    <section id="contact" class="py-24 relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-3xl bg-brand-neon/5 blur-[150px] rounded-full -z-10"></div>
-        
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="glass-card p-10 md:p-14 rounded-3xl text-center border-gray-700 shadow-2xl">
-                
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Let's Build Your Digital Presence</h2>
-                <p class="text-gray-400 mb-10 max-w-2xl mx-auto">Need a high-performing website or a marketing overhaul? Fill out the form below. Looking for brand deals or creator collaborations? Join our network.</p>
-                
-                <form class="max-w-lg mx-auto text-left bg-black/60 p-6 sm:p-8 rounded-2xl border border-gray-800 shadow-lg" onsubmit="event.preventDefault(); alert('Request Submitted! We will contact you soon.');">
-                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-brand-neon">🚀</span> Project Inquiry Form
-                    </h3>
-                    
-                    <div class="space-y-5">
+    <!-- 8. SIMPLE CONTACT SECTION (No tabs, clean look) -->
+    <section id="contact" class="py-24 relative bg-brand-charcoal/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Let's Build Something Great</h2>
+                <p class="text-gray-400 text-lg">Drop us a message below or visit our dedicated Brand/Creator pages.</p>
+            </div>
+
+            <!-- Standard Clean Form -->
+            <div class="glass-card p-8 md:p-10 rounded-3xl border border-gray-800 mb-8 shadow-2xl">
+                <form onsubmit="event.preventDefault(); alert('Message Submitted Successfully!');" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="name">Full Name</label>
-                            <input type="text" id="name" required class="w-full bg-black/50 border border-gray-700 focus:border-brand-neon focus:ring-1 focus:ring-brand-neon rounded-lg px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="Your Name">
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Name</label>
+                            <input type="text" placeholder="Your Name" required class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors">
                         </div>
-                        
                         <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="email">Email Address</label>
-                            <input type="email" id="email" required class="w-full bg-black/50 border border-gray-700 focus:border-brand-neon focus:ring-1 focus:ring-brand-neon rounded-lg px-4 py-3 text-white outline-none transition-all placeholder-gray-600" placeholder="hello@company.com">
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Email</label>
+                            <input type="email" placeholder="you@company.com" required class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors">
                         </div>
-                        
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="service_type">What do you need help with?</label>
-                            <select id="service_type" required class="w-full bg-black/50 border border-gray-700 focus:border-brand-neon focus:ring-1 focus:ring-brand-neon rounded-lg px-4 py-3 text-white outline-none transition-all appearance-none">
-                                <option value="" disabled selected>Select a service...</option>
-                                <option value="web">Web Development (App/Website)</option>
-                                <option value="marketing">Performance Marketing & Ads</option>
-                                <option value="both">Both (Full Tech & Marketing)</option>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Phone</label>
+                            <input type="tel" placeholder="+91 98765 43210" required class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Service Needed</label>
+                            <select class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors">
+                                <option class="bg-black">Web Development</option>
+                                <option class="bg-black">Performance Marketing</option>
+                                <option class="bg-black">General Inquiry</option>
                             </select>
                         </div>
-
-                        <button type="submit" class="w-full btn-neon py-4 rounded-lg font-bold text-lg mt-4">
-                            Submit Inquiry
-                        </button>
                     </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Message</label>
+                        <textarea rows="4" placeholder="How can we help you scale?" class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="btn-neon w-full py-4 rounded-xl font-bold text-lg">Send Message</button>
                 </form>
+            </div>
 
-                <div class="my-12 flex items-center justify-center opacity-60">
-                    <div class="h-px bg-gray-600 w-1/4 sm:w-1/3"></div>
-                    <span class="mx-4 text-gray-400 font-bold text-sm tracking-widest text-center whitespace-nowrap">OR JOIN THE NETWORK</span>
-                    <div class="h-px bg-gray-600 w-1/4 sm:w-1/3"></div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-6 max-w-2xl mx-auto">
-                    <a href="brand.html" class="flex-1 px-8 py-5 bg-brand-accent/10 border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-black rounded-xl font-bold text-lg transition-all shadow-[0_0_15px_rgba(0,240,255,0.1)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] flex items-center justify-center gap-2">
-    🏢 Join as Brand
-</a>
-<a href="creator.html" class="flex-1 px-8 py-5 bg-purple-500/10 border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white rounded-xl font-bold text-lg transition-all shadow-[0_0_15px_rgba(168,85,247,0.1)] hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] flex items-center justify-center gap-2">
-    🎥 Join as Creator
-</a>
-                </div>
-                <p class="text-xs text-gray-500 mt-6">*We charge a flat 10% commission on successful brand-creator deals. Full transparency.</p>
-
+            <!-- Links to the separate files you already created -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <a href="brand.html" class="px-8 py-3 rounded-full border border-gray-700 bg-gray-900/50 text-gray-300 hover:border-brand-accent hover:text-white transition-all text-center font-semibold flex items-center justify-center gap-2">
+                    🏢 Go to Brands Page
+                </a>
+                <a href="creator.html" class="px-8 py-3 rounded-full border border-gray-700 bg-gray-900/50 text-gray-300 hover:border-purple-400 hover:text-white transition-all text-center font-semibold flex items-center justify-center gap-2">
+                    🎥 Go to Creators Page
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- 7. FOOTER -->
-    <footer class="bg-black py-10 border-t border-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-gray-500 text-sm mb-4 md:mb-0">
-                &copy; 2026 AVENOR. All rights reserved.
-            </div>
-            <div class="flex space-x-6 mb-4 md:mb-0">
-                <a href="#" class="text-gray-500 hover:text-brand-neon transition-colors">LinkedIn</a>
-                <a href="#" class="text-gray-500 hover:text-brand-neon transition-colors">Twitter (X)</a>
-                <a href="#" class="text-gray-500 hover:text-brand-neon transition-colors">Instagram</a>
-            </div>
-            <div class="text-xs text-gray-600 font-mono tracking-widest uppercase">
-                Engineered for Tech & Growth.
+    <!-- 9. FOOTER -->
+    <footer class="bg-black border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded bg-gradient-to-br from-brand-neon to-brand-accent flex items-center justify-center font-bold text-black text-lg mr-2">A</div>
+                    <span class="font-bold text-lg tracking-tight text-white">AVENOR</span>
+                </div>
+                <p class="text-gray-500 text-sm text-center">© 2026 AVENOR Agency. All rights reserved. Built for revenue & scale.</p>
+                <div class="flex space-x-6 text-gray-400 text-sm">
+                    <a href="#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                </div>
             </div>
         </div>
     </footer>
