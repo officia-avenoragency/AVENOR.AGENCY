@@ -6,9 +6,7 @@ const axios = require('axios');
 
 const app = express();
 
-// ==========================================
-// 1. BACKEND CORS & PREFLIGHT SETUP
-// ==========================================
+// CORS Setup
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'OPTIONS'],
@@ -19,7 +17,6 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
     }
@@ -28,9 +25,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-// ==========================================
-// 2. DATABASE CONNECTION & SCHEMA
-// ==========================================
+// Database Connection
 let isConnected = false;
 async function connectDB() {
     if (isConnected) return;
@@ -42,7 +37,6 @@ async function connectDB() {
         console.log('✅ MongoDB Connected Successfully');
     } catch (err) {
         console.error('❌ DB Connection Error:', err.message);
-        throw new Error(`Database Connection Failed: ${err.message}`);
     }
 }
 
@@ -58,9 +52,7 @@ const leadSchema = new mongoose.Schema({
 
 const Lead = mongoose.models.Lead || mongoose.model('Lead', leadSchema);
 
-// ==========================================
-// 3. API ROUTES (Form Submit Karne Ke Liye)
-// ==========================================
+// API Route for Forms
 app.post('/api/submit-lead', async (req, res) => {
     try {
         await connectDB();
@@ -80,8 +72,7 @@ app.post('/api/submit-lead', async (req, res) => {
             parse_mode: 'Markdown'
         });
 
-        return res.status(200).json({ success: true, message: 'Lead saved and notification sent!' });
-
+        return res.status(200).json({ success: true, message: 'Lead saved!' });
     } catch (error) {
         console.error('API Error:', error.message);
         return res.status(500).json({ success: false, error: error.message });
