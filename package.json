@@ -1,6 +1,7 @@
 {
   "name": "avenor-agency",
   "version": "1.0.0",
+  "main": "api/submit-lead.js",
   "scripts": {
     "build": "exit 0"
   },
