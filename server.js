@@ -57,11 +57,6 @@ const leadSchema = new mongoose.Schema({
 
 const Lead = mongoose.models.Lead || mongoose.model('Lead', leadSchema);
 
-// Routes
-app.get('/', (req, res) => {
-    res.send('🚀 AVENOR Backend API is Live and Running on Vercel!');
-});
-
 app.post('/api/submit-lead', async (req, res) => {
     try {
         await connectDB();
