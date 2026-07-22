@@ -42,17 +42,34 @@
             box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
             transition: all 0.3s ease;
         }
-        .btn-creator:hover {
+        .btn-creator:hover:not(:disabled) {
             box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
             transform: scale(1.02);
+        }
+        .btn-creator:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
         }
     </style>
 </head>
 <body class="bg-brand-dark text-brand-silver font-sans antialiased min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-x-hidden">
 
     <!-- Background Glow Blobs -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-creator/10 rounded-full blur-[150px] -z-10"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-[150px] -z-10"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-creator/10 rounded-full blur-[150px] -z-10 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-[150px] -z-10 pointer-events-none"></div>
+
+    <!-- Notification Toast Modal -->
+    <div id="statusModal" class="fixed inset-0 bg-black/70 backdrop-blur-md hidden z-50 flex items-center justify-center p-4 transition-all duration-300">
+        <div class="glass-card max-w-md w-full p-6 sm:p-8 rounded-3xl text-center space-y-4 border-brand-creator/30 shadow-2xl">
+            <div id="modalIcon" class="text-5xl mx-auto mb-2">🎉</div>
+            <h3 id="modalTitle" class="text-2xl font-bold text-white">Submitted Successfully!</h3>
+            <p id="modalMessage" class="text-gray-300 text-sm">We will review your profile and connect with you shortly.</p>
+            <button id="modalBtn" onclick="closeModal()" class="w-full btn-creator py-3 rounded-xl font-bold mt-4 flex justify-center items-center">
+                Got it
+            </button>
+        </div>
+    </div>
 
     <div class="max-w-2xl w-full space-y-8 relative z-10">
         <!-- Back to Home Link -->
@@ -159,8 +176,8 @@
 
                 <!-- Submit Button -->
                 <div>
-                    <button type="submit" class="w-full btn-creator py-4 rounded-xl font-bold text-lg tracking-wide shadow-lg">
-                        Submit Application
+                    <button type="submit" class="w-full btn-creator py-4 rounded-xl font-bold text-lg tracking-wide shadow-lg flex items-center justify-center gap-2">
+                        <span>Submit Application</span>
                     </button>
                 </div>
             </form>
@@ -173,21 +190,47 @@
     </div>
 
 <script>
+    let isSuccessState = false;
+
+    // Modal Control Functions
+    function showModal(title, message, icon, isSuccess) {
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalMessage').innerText = message;
+        document.getElementById('modalIcon').innerText = icon;
+        document.getElementById('statusModal').classList.remove('hidden');
+        isSuccessState = isSuccess;
+    }
+
+    function closeModal() {
+        document.getElementById('statusModal').classList.add('hidden');
+        if (isSuccessState) {
+            window.location.href = 'index.html';
+        }
+    }
+
     document.getElementById('creatorForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = 'Submitting Profile... ⏳';
+        
+        // Add Loading Spinner State
+        submitBtn.innerHTML = `
+            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>Submitting Profile...</span>
+        `;
         submitBtn.disabled = true;
 
         const payload = {
             source: 'Creator',
-            name: document.getElementById('full-name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('creator-phone').value,
-            socialLink: document.getElementById('handle').value,
-            requirements: `Platform: ${document.getElementById('platform').value} | Followers: ${document.getElementById('followers').value} | Niche: ${document.getElementById('niche').value} | Media Kit: ${document.getElementById('media-kit').value || 'None'} | Message: ${document.getElementById('message').value || 'None'}`
+            name: document.getElementById('full-name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            phone: document.getElementById('creator-phone').value.trim(),
+            socialLink: document.getElementById('handle').value.trim(),
+            requirements: `Platform: ${document.getElementById('platform').value} | Followers: ${document.getElementById('followers').value.trim()} | Niche: ${document.getElementById('niche').value} | Media Kit: ${document.getElementById('media-kit').value.trim() || 'None'} | Message: ${document.getElementById('message').value.trim() || 'None'}`
         };
 
         try {
@@ -199,20 +242,21 @@
             });
             
             const result = await response.json();
-            if (result.success) {
-                alert('Application Received! We will review your profile.');
-                window.location.href = 'index.html';
+            
+            if (response.ok && (result.success || result.status === 'success')) {
+                showModal('Application Received!', 'Thanks for applying! We will review your profile and reach out to you soon.', '🌟', true);
             } else {
-                alert('Error: ' + result.error);
+                showModal('Submission Failed', result.error || 'Unable to submit details. Please try again.', '⚠️', false);
             }
         } catch (error) {
-            console.error('Error:', error);
-            alert('Connection failed. Please check your internet connection.');
+            console.error('API Error:', error);
+            showModal('Network Error', 'Something went wrong connecting to our servers. Check your internet connection.', '🌐', false);
         } finally {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         }
     });
 </script>
+
 </body>
 </html>
