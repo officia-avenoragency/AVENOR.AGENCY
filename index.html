@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVENOR | Tech, Growth & Influencer Agency</title>
+    
+    <!-- AUTO SCROLL TO TOP ON REFRESH -->
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        window.addEventListener('unload', function () {
+            window.scrollTo(0, 0);
+        });
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Plus Jakarta Sans -->
@@ -465,6 +478,10 @@
                         <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Message</label>
                         <textarea id="formMessage" rows="4" placeholder="How can we help you scale?" required class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors"></textarea>
                     </div>
+
+                    <!-- Inline status message area -->
+                    <div id="formStatus" class="hidden text-center py-3 px-4 rounded-xl font-semibold text-sm"></div>
+
                     <button type="submit" id="submitBtn" class="btn-neon w-full py-4 rounded-xl font-bold text-lg">Send Message</button>
                 </form>
             </div>
@@ -472,10 +489,10 @@
             <!-- Links to separate pages -->
             <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                 <a href="brand.html" class="px-8 py-3 rounded-full border border-gray-700 bg-gray-900/50 text-gray-300 hover:border-brand-accent hover:text-white transition-all text-center font-semibold flex items-center justify-center gap-2">
-                    🏢 Join As Brand
+                    🏢 Go to Brands Page
                 </a>
                 <a href="creator.html" class="px-8 py-3 rounded-full border border-gray-700 bg-gray-900/50 text-gray-300 hover:border-purple-400 hover:text-white transition-all text-center font-semibold flex items-center justify-center gap-2">
-                    🎥 Join As Creator
+                    🎥 Go to Creators Page
                 </a>
             </div>
         </div>
@@ -505,8 +522,11 @@
             e.preventDefault();
 
             const submitBtn = document.getElementById('submitBtn');
+            const statusDiv = document.getElementById('formStatus');
+
             submitBtn.innerText = "Sending...";
             submitBtn.disabled = true;
+            statusDiv.className = "hidden"; // Reset status visibility
 
             const name = document.getElementById('formName').value;
             const email = document.getElementById('formEmail').value;
@@ -514,9 +534,9 @@
             const service = document.getElementById('formService').value;
             const message = document.getElementById('formMessage').value;
 
-            // ⚠️ ENTER YOUR ACTUAL BOT TOKEN & CHAT ID HERE
-            const BOT_TOKEN = '8864663247:AAGh7p-XdXSuytxvQKzm8bU5iO0ay_R1ksw'; 
-            const CHAT_ID = '8710563223';
+            // ⚠️ APNA BOT TOKEN AUR CHAT ID YAHAN PASTE KAREIN
+            const BOT_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'; 
+            const CHAT_ID = 'YOUR_TELEGRAM_CHAT_ID';
 
             const telegramMessage = `📩 *New Lead Received (AVENOR)*\n\n` +
                                     `👤 *Name:* ${name}\n` +
@@ -537,14 +557,16 @@
                 });
 
                 if (response.ok) {
-                    alert('Message Sent Successfully!');
+                    statusDiv.className = "block text-center py-3 px-4 rounded-xl font-semibold text-sm bg-green-500/20 text-brand-neon border border-brand-neon/30 my-4";
+                    statusDiv.innerText = "✅ Message Sent Successfully!";
                     document.getElementById('contactForm').reset();
                 } else {
-                    alert('Failed to send message. Please check Bot Token or Chat ID.');
+                    statusDiv.className = "block text-center py-3 px-4 rounded-xl font-semibold text-sm bg-red-500/20 text-red-400 border border-red-500/30 my-4";
+                    statusDiv.innerText = "❌ Failed to send message. Please check Bot Token or Chat ID.";
                 }
             } catch (error) {
-                console.error('Error:', error);
-                alert('Something went wrong. Please try again!');
+                statusDiv.className = "block text-center py-3 px-4 rounded-xl font-semibold text-sm bg-red-500/20 text-red-400 border border-red-500/30 my-4";
+                statusDiv.innerText = "❌ Something went wrong. Please try again!";
             } finally {
                 submitBtn.innerText = "Send Message";
                 submitBtn.disabled = false;
