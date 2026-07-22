@@ -3,51 +3,23 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const axios = require('axios');
-const path = require('path'); // 👈 HTML files ko serve karne ke liye naya module add kiya
 
 const app = express();
 
 // ==========================================
-// 1. FRONTEND ROUTING (HTML Files Ke Liye)
+// 1. BACKEND CORS & PREFLIGHT SETUP
 // ==========================================
-
-// Ye line Vercel ko allow karegi ki wo tumhari HTML, CSS, aur Images ko browser me bhej sake
-app.use(express.static(__dirname));
-
-// Main Link (Home Page) par indexx.html dikhega
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'indexx.html'));
-});
-
-// /brand wale link par brand.html dikhega
-app.get('/brand', (req, res) => {
-    res.sendFile(path.join(__dirname, 'brand.html'));
-});
-
-// /creator wale link par creator.html dikhega
-app.get('/creator', (req, res) => {
-    res.sendFile(path.join(__dirname, 'creator.html'));
-});
-
-
-// ==========================================
-// 2. BACKEND CORS & PREFLIGHT SETUP
-// ==========================================
-
-// Complete CORS Setup for Preflight (OPTIONS)
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
-// Hardcoded Preflight Bypass Middleware (Isse Preflight kabhi fail nahi hoga)
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     
-    // Agar Browser Preflight OPTIONS bhej raha hai, toh turant 200 OK bhej do
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
     }
@@ -56,12 +28,9 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-
 // ==========================================
-// 3. DATABASE CONNECTION & SCHEMA
+// 2. DATABASE CONNECTION & SCHEMA
 // ==========================================
-
-// Serverless DB Connection with Fast Timeout
 let isConnected = false;
 async function connectDB() {
     if (isConnected) return;
@@ -77,7 +46,6 @@ async function connectDB() {
     }
 }
 
-// Database Schema
 const leadSchema = new mongoose.Schema({
     source: String,
     name: String,
@@ -90,21 +58,17 @@ const leadSchema = new mongoose.Schema({
 
 const Lead = mongoose.models.Lead || mongoose.model('Lead', leadSchema);
 
-
 // ==========================================
-// 4. API ROUTES (Form Submit Karne Ke Liye)
+// 3. API ROUTES (Form Submit Karne Ke Liye)
 // ==========================================
-
 app.post('/api/submit-lead', async (req, res) => {
     try {
         await connectDB();
         const { source, name, email, phone, socialLink, requirements } = req.body;
 
-        // 1. Save to MongoDB
         const newLead = new Lead({ source, name, email, phone, socialLink, requirements });
         await newLead.save();
 
-        // 2. Telegram Notification
         const botToken = '8864663247:AAGh7p-XdXSuytxvQKzm8bU5iO0ay_R1ksw';
         const chatId = '8769016149';
 
