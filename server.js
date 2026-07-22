@@ -3,17 +3,45 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const axios = require('axios');
+const path = require('path'); // 👈 HTML files ko serve karne ke liye naya module add kiya
 
 const app = express();
 
-// 1. Complete CORS Setup for Preflight (OPTIONS)
+// ==========================================
+// 1. FRONTEND ROUTING (HTML Files Ke Liye)
+// ==========================================
+
+// Ye line Vercel ko allow karegi ki wo tumhari HTML, CSS, aur Images ko browser me bhej sake
+app.use(express.static(__dirname));
+
+// Main Link (Home Page) par indexx.html dikhega
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'indexx.html'));
+});
+
+// /brand wale link par brand.html dikhega
+app.get('/brand', (req, res) => {
+    res.sendFile(path.join(__dirname, 'brand.html'));
+});
+
+// /creator wale link par creator.html dikhega
+app.get('/creator', (req, res) => {
+    res.sendFile(path.join(__dirname, 'creator.html'));
+});
+
+
+// ==========================================
+// 2. BACKEND CORS & PREFLIGHT SETUP
+// ==========================================
+
+// Complete CORS Setup for Preflight (OPTIONS)
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
-// 2. Hardcoded Preflight Bypass Middleware (Isse Preflight kabhi fail nahi hoga)
+// Hardcoded Preflight Bypass Middleware (Isse Preflight kabhi fail nahi hoga)
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -27,6 +55,11 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
+
+
+// ==========================================
+// 3. DATABASE CONNECTION & SCHEMA
+// ==========================================
 
 // Serverless DB Connection with Fast Timeout
 let isConnected = false;
@@ -56,6 +89,11 @@ const leadSchema = new mongoose.Schema({
 });
 
 const Lead = mongoose.models.Lead || mongoose.model('Lead', leadSchema);
+
+
+// ==========================================
+// 4. API ROUTES (Form Submit Karne Ke Liye)
+// ==========================================
 
 app.post('/api/submit-lead', async (req, res) => {
     try {
