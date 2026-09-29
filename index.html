@@ -1,577 +1,395 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVENOR | Tech, Growth & Influencer Agency</title>
-    
-    <!-- AUTO SCROLL TO TOP ON REFRESH -->
-    <script>
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.scrollTo(0, 0);
-
-        window.addEventListener('unload', function () {
-            window.scrollTo(0, 0);
-        });
-    </script>
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Plus Jakarta Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#0a0a0a',
-                            charcoal: '#121212',
-                            silver: '#e2e8f0',
-                            neon: '#39FF14',
-                            accent: '#00f0ff'
-                        }
-                    },
-                    animation: {
-                        'infinite-scroll': 'scroll 30s linear infinite',
-                        'float-slow': 'float 6s ease-in-out infinite',
-                        'float-fast': 'float 4s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        scroll: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-50%)' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-nav {
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .glass-card {
-            background: linear-gradient(145deg, rgba(25, 25, 25, 0.6) 0%, rgba(10, 10, 10, 0.8) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(57, 255, 20, 0.5);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(57, 255, 20, 0.15);
-        }
-        .btn-neon {
-            background-color: #39FF14;
-            color: #0a0a0a;
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
-            transition: all 0.3s ease;
-        }
-        .btn-neon:hover {
-            box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
-            transform: scale(1.02);
-        }
-        .process-line::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -1.5rem;
-            width: 1.5rem;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.1);
-        }
-        @media (max-width: 768px) {
-            .process-line::after {
-                display: none;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVENOR | Marketing, Technology & Influencer Agency</title>
+<meta name="description" content="AVENOR is a 3-in-1 agency helping businesses BUILD through technology, GROW through marketing, and CONNECT with creators through influencer partnerships.">
+<link rel="canonical" href="https://www.your-domain.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070A'/%3E%3Ctext x='32' y='45' font-size='38' font-weight='800' text-anchor='middle' fill='%23fff' font-family='sans-serif'%3EA%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AVENOR | Marketing, Technology & Influencer Agency">
+<meta property="og:description" content="One Agency. Three Divisions. One Growth Partner. BUILD, GROW and CONNECT with AVENOR.">
+<meta property="og:url" content="https://www.your-domain.com/">
+<meta property="og:image" content="https://www.your-domain.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AVENOR | Marketing, Technology & Influencer Agency">
+<meta name="twitter:description" content="A 3-in-1 agency: BUILD through technology, GROW through marketing, CONNECT through creators.">
+<meta name="twitter:image" content="https://www.your-domain.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AVENOR","slogan":"Where Vision Becomes Influence.","url":"https://www.your-domain.com/","description":"A 3-in-1 agency offering technology, marketing and influencer partnerships."}</script>
+<script>
+if('scrollRestoration' in history){history.scrollRestoration='manual';}
+window.scrollTo(0,0);
+window.addEventListener('unload',function(){window.scrollTo(0,0);});
+try{var t=localStorage.getItem('avenor-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070A;--bg2:#0A0F15;--card:#0D131B;--tx:#F5F7FA;--tx2:#8B95A5;--bd:rgba(255,255,255,.10);--inv:#fff;--onp:#05070A}
+[data-theme=light]{--bg:#F6F7F9;--bg2:#FFFFFF;--card:#FFFFFF;--tx:#0B1220;--tx2:#4B5565;--bd:rgba(11,18,32,.12);--inv:#0B1220;--onp:#fff}
+.b{--p:#35BDF6;--s:#8DE0FF}.g{--p:#FF3048;--s:#FF6B7A}.c{--p:#9B6CFF;--s:#C1A9FF}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+section{padding:96px 0;position:relative}
+.alt{background:var(--bg2)}
+h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:800;margin-bottom:16px}
+h3{font-size:1.15rem;font-weight:700}
+.lead{color:var(--tx2);font-size:clamp(1rem,1.6vw,1.15rem);max-width:720px}
+.eyebrow{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--p,var(--tx2));margin-bottom:16px}
+.center{text-align:center}.center .lead{margin:0 auto}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em}
+.logo i{width:34px;height:34px;border-radius:8px;background:var(--inv);color:var(--onp);display:grid;place-items:center;font-style:normal;font-weight:800}
+.links{display:flex;gap:26px;align-items:center}
+.links a{font-size:.85rem;font-weight:500;color:var(--tx2);transition:color .2s}
+.links a:hover{color:var(--tx)}
+.links a.lb:hover{color:#35BDF6}.links a.lg:hover{color:#FF3048}.links a.lc:hover{color:#9B6CFF}
+.tools{display:flex;gap:10px;align-items:center}
+.ib{width:40px;height:40px;border-radius:50%;border:1px solid var(--bd);background:transparent;color:var(--tx);cursor:pointer;font-size:1rem;display:grid;place-items:center;transition:border-color .2s}
+.ib:hover{border-color:var(--tx2)}
+#burger{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:.95rem;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .25s,box-shadow .25s,background .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-w{background:var(--inv);color:var(--onp)}
+.btn-o{border-color:var(--bd);color:var(--tx);background:transparent}
+.btn-o:hover{border-color:var(--tx2)}
+.btn-p{background:var(--p);color:#05070A;box-shadow:0 0 0 rgba(0,0,0,0)}
+.btn-p:hover{box-shadow:0 8px 28px -8px var(--p)}
+.sm{padding:10px 18px;font-size:.82rem}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:130px;overflow:hidden}
+.hero h1{font-size:clamp(2.3rem,6vw,4.6rem);font-weight:800;margin-bottom:22px}
+.hero .grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.stack{display:flex;flex-direction:column;gap:14px}
+.pill{display:flex;align-items:center;gap:16px;padding:20px 22px;border-radius:18px;background:var(--card);border:1px solid var(--bd);border-left:3px solid var(--p);transition:transform .3s,box-shadow .3s}
+.pill:hover{transform:translateX(6px);box-shadow:0 10px 30px -14px var(--p)}
+.pill b{font-size:.8rem;color:var(--p);letter-spacing:.14em}
+.pill h4{font-size:1.1rem}.pill p{font-size:.85rem;color:var(--tx2)}
+.glow{position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(130px);opacity:.13;z-index:0;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:10px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);border-color:var(--p,var(--tx2));box-shadow:0 14px 36px -18px var(--p,#000)}
+.card p{color:var(--tx2);font-size:.9rem;flex:1}
+.price{font-size:1.6rem;font-weight:800;color:var(--p)}
+.price small{font-size:.8rem;font-weight:500;color:var(--tx2)}
+.card .btn{align-self:flex-start;margin-top:6px}
+.nav-card{padding:30px;border-radius:24px;background:var(--card);border:1px solid var(--bd);display:block;transition:transform .3s,border-color .3s,box-shadow .3s}
+.nav-card:hover{transform:translateY(-6px);border-color:var(--p);box-shadow:0 18px 40px -20px var(--p)}
+.nav-card .n{font-size:.8rem;font-weight:700;color:var(--p);letter-spacing:.16em}
+.nav-card h3{font-size:2rem;margin:10px 0 4px;color:var(--p)}
+.nav-card p{color:var(--tx2)}
+/* division */
+.div-head{display:flex;gap:28px;align-items:flex-start;margin-bottom:48px;flex-wrap:wrap}
+.big{font-size:clamp(4rem,10vw,7.5rem);font-weight:800;line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--p);opacity:.8}
+.sub{margin:56px 0 22px;font-size:1.3rem;font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{padding:20px;border-radius:16px;border:1px solid var(--bd);background:var(--card);position:relative}
+.step b{color:var(--p);font-size:.8rem;letter-spacing:.14em}
+.step h4{font-size:1rem;margin:4px 0}
+.step p{font-size:.82rem;color:var(--tx2)}
+.flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.flow span{padding:12px 20px;border-radius:999px;border:1px solid var(--p);color:var(--p);font-weight:600;font-size:.9rem}
+.flow i{color:var(--tx2);font-style:normal}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{padding:10px 16px;border-radius:999px;background:var(--card);border:1px solid var(--bd);font-size:.85rem;font-weight:500}
+.chips span:before{content:"✓ ";color:var(--p)}
+.note{margin-top:18px;padding:20px 24px;border-radius:16px;border:1px dashed var(--p);background:var(--card)}
+.note b{color:var(--p)}.note p{color:var(--tx2);font-size:.9rem;margin-top:4px}
+.dcta{margin-top:56px;padding:44px 28px;border-radius:26px;text-align:center;background:linear-gradient(135deg,color-mix(in srgb,var(--p) 16%,var(--card)),var(--card));border:1px solid var(--p)}
+.dcta h3{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:18px}
+.commission{text-align:center;padding:56px 24px;border-radius:28px;background:radial-gradient(circle at 50% 0%,color-mix(in srgb,var(--p) 25%,var(--card)),var(--card) 70%);border:1px solid var(--p);margin-bottom:8px}
+.commission .num{font-size:clamp(5rem,16vw,10rem);font-weight:800;line-height:1;color:var(--p)}
+.commission h3{font-size:1.3rem;margin-bottom:6px}
+.commission p{color:var(--tx2);max-width:520px;margin:10px auto 0}
+.grid2c{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card ul{list-style:none;display:grid;gap:8px;margin:6px 0 10px}
+.card li{font-size:.9rem;color:var(--tx2)}
+.card li:before{content:"✓ ";color:var(--p);font-weight:700}
+/* pricing overview */
+.ov{padding:32px;border-radius:22px;background:var(--card);border:1px solid var(--bd);border-top:3px solid var(--p);text-align:center}
+.ov h3{color:var(--p);letter-spacing:.14em;font-size:.9rem}
+.ov p{font-size:1.5rem;font-weight:800;margin-top:8px}
+/* faq */
+.faq{max-width:820px;margin:40px auto 0;display:grid;gap:12px}
+.faq details{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden;transition:border-color .3s}
+.faq details[open]{border-color:var(--tx2)}
+.faq summary{cursor:pointer;padding:20px 24px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-size:1.4rem;line-height:1;transition:transform .3s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.faq details[open] .ans{grid-template-rows:1fr}
+.faq .ans div{overflow:hidden}
+.faq .ans p{padding:0 24px 20px;color:var(--tx2);font-size:.95rem}
+.fin{padding:80px 24px;border-radius:32px;text-align:center;background:var(--card);border:1px solid var(--bd);position:relative;overflow:hidden}
+.fin:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#35BDF6,#FF3048,#9B6CFF);opacity:.08}
+.fin>*{position:relative}
+/* form */
+form{background:var(--card);border:1px solid var(--bd);border-radius:26px;padding:clamp(22px,4vw,40px);display:grid;gap:18px;max-width:860px;margin:40px auto 0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx2);margin-bottom:8px}
+input,select,textarea{width:100%;background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:12px;padding:13px 15px;font:inherit;font-size:.95rem;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--tx)}
+#formStatus{display:none;text-align:center;padding:12px 16px;border-radius:12px;font-weight:600;font-size:.9rem}
+#formStatus.ok{display:block;background:rgba(53,189,246,.12);color:#35BDF6;border:1px solid rgba(53,189,246,.3)}
+#formStatus.err{display:block;background:rgba(255,48,72,.12);color:#FF3048;border:1px solid rgba(255,48,72,.3)}
+.links2{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:26px}
+footer{border-top:1px solid var(--bd);padding:64px 0 28px;background:var(--bg2)}
+.fg{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:32px}
+footer h4{font-size:.75rem;letter-spacing:.16em;margin-bottom:14px}
+footer li{list-style:none;margin-bottom:8px;font-size:.88rem;color:var(--tx2)}
+footer li a:hover{color:var(--tx)}
+footer p{color:var(--tx2);font-size:.9rem;margin-top:12px;max-width:340px}
+.fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:44px;padding-top:22px;border-top:1px solid var(--bd);font-size:.82rem;color:var(--tx2)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:1024px){.grid4,.steps{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr 1fr}.links{display:none}#burger{display:grid}.hero .grid2{grid-template-columns:1fr}}
+@media(max-width:640px){section{padding:68px 0}.grid3,.grid4,.grid2c,.row,.steps{grid-template-columns:1fr}.fg{grid-template-columns:1fr 1fr}.fg>div:first-child{grid-column:1/-1}.nav .btn.sm{display:none}}
+.links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--bg);border-bottom:1px solid var(--bd);padding:10px 20px 20px}
+.links.open a{padding:12px 0;width:100%;font-size:1rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
-<body class="bg-brand-dark text-brand-silver font-sans antialiased overflow-x-hidden selection:bg-brand-neon selection:text-black">
+<body>
 
-    <!-- 1. NAVIGATION BAR -->
-    <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center cursor-pointer">
-                    <div class="w-10 h-10 rounded bg-gradient-to-br from-brand-neon to-brand-accent flex items-center justify-center font-bold text-black text-xl mr-2">
-                        A
-                    </div>
-                    <span class="font-bold text-xl tracking-tight text-white">AVENOR</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#services" class="text-sm font-medium hover:text-brand-neon transition-colors">What We Do</a>
-                    <a href="#full-services" class="text-sm font-medium hover:text-brand-neon transition-colors">Services</a>
-                    <a href="#pricing" class="text-sm font-medium hover:text-brand-neon transition-colors">Pricing</a>
-                    <a href="#process" class="text-sm font-medium hover:text-brand-neon transition-colors">Process</a>
-                    <a href="#trust" class="text-sm font-medium hover:text-brand-neon transition-colors">Why Us</a>
-                </div>
-                <div class="hidden md:flex">
-                    <a href="#contact" class="btn-neon px-6 py-2.5 rounded-full font-bold text-sm tracking-wide">
-                        Work With Us
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<nav aria-label="Main navigation"><div class="wrap nav">
+  <a href="#top" class="logo" aria-label="AVENOR home"><i>A</i>AVENOR</a>
+  <div class="links" id="links">
+    <a href="#about">About</a><a href="#build" class="lb">Build</a><a href="#grow" class="lg">Grow</a><a href="#connect" class="lc">Connect</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+  </div>
+  <div class="tools">
+    <button class="ib" id="theme" aria-label="Toggle theme">☾</button>
+    <a href="#contact" class="btn btn-w sm">Start a Project →</a>
+    <button class="ib" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</div></nav>
 
-    <!-- 2. HERO SECTION -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-neon/10 rounded-full blur-[120px] -z-10"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-accent/10 rounded-full blur-[120px] -z-10"></div>
+<main id="top">
+<!-- HERO -->
+<header class="hero">
+  <div class="glow" style="background:#35BDF6;top:10%;left:-5%"></div>
+  <div class="glow" style="background:#FF3048;bottom:0;left:35%"></div>
+  <div class="glow" style="background:#9B6CFF;top:15%;right:-5%"></div>
+  <div class="wrap"><div class="grid2">
+    <div>
+      <span class="eyebrow" style="color:var(--tx2)">✦ WELCOME TO AVENOR</span>
+      <h1>One Agency. Three Divisions. One Growth Partner.</h1>
+      <p class="lead">AVENOR helps businesses build digital products, grow through marketing, and connect with the right creators.</p>
+      <div class="cta-row"><a href="#contact" class="btn btn-w">Start a Project →</a><a href="#about" class="btn btn-o">Explore Our Divisions ↓</a></div>
+    </div>
+    <div class="stack" aria-label="AVENOR divisions">
+      <a href="#build" class="pill b"><b>01</b><div><h4>BUILD</h4><p>Technology &amp; Digital Products</p></div></a>
+      <a href="#grow" class="pill g"><b>02</b><div><h4>GROW</h4><p>Marketing &amp; Performance</p></div></a>
+      <a href="#connect" class="pill c"><b>03</b><div><h4>CONNECT</h4><p>Influencer Marketing &amp; Brand Deals</p></div></a>
+    </div>
+  </div></div>
+</header>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="text-left">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-                        Bridging Brands & Creators. <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-accent">Building Web Systems That Convert.</span>
-                    </h1>
-                    <p class="text-lg text-gray-400 mb-8 max-w-xl leading-relaxed">
-                        AVENOR is a full-stack agency. We build high-performance websites and run data-driven influencer campaigns to generate actual revenue for your business.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="btn-neon px-8 py-4 rounded-lg font-bold text-center text-lg">
-                            Get Your Free Strategy
-                        </a>
-                        <a href="#services" class="px-8 py-4 rounded-lg font-bold text-center text-lg border border-gray-600 hover:border-white hover:bg-white/5 transition-all text-white">
-                            How We Work
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="relative hidden lg:block h-[500px]">
-                    <div class="absolute top-10 right-10 glass-card p-6 rounded-2xl w-64 animate-float-slow z-20">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-400">Client ROAS</p>
-                                <p class="text-lg font-bold text-white">+482%</p>
-                            </div>
-                        </div>
-                        <div class="h-2 bg-gray-800 rounded-full w-full overflow-hidden">
-                            <div class="h-full bg-brand-neon w-4/5"></div>
-                        </div>
-                    </div>
+<!-- INTRO -->
+<section id="about" class="alt"><div class="wrap">
+  <div class="center rv"><span class="eyebrow" style="color:var(--tx2)">About AVENOR</span>
+  <h2>Three Capabilities. One Agency.</h2>
+  <p class="lead">AVENOR brings technology, marketing and influencer partnerships under one agency, so your product, your growth and your creator collaborations work together instead of in silos.</p></div>
+  <div class="grid3" style="margin-top:48px">
+    <a href="#build" class="nav-card b rv"><span class="n">01</span><h3>BUILD</h3><p>Technology &amp; Digital Products</p></a>
+    <a href="#grow" class="nav-card g rv"><span class="n">02</span><h3>GROW</h3><p>Marketing &amp; Performance</p></a>
+    <a href="#connect" class="nav-card c rv"><span class="n">03</span><h3>CONNECT</h3><p>Influencer Marketing &amp; Brand Deals</p></a>
+  </div>
+</div></section>
 
-                    <div class="absolute bottom-20 left-10 glass-card p-6 rounded-2xl w-72 animate-float-fast z-10 border-brand-accent/30">
-                        <div class="flex items-center justify-between mb-4">
-                            <p class="text-sm font-semibold text-white">Creator Payouts</p>
-                            <span class="text-brand-accent text-xs font-bold bg-brand-accent/10 px-2 py-1 rounded">Secured</span>
-                        </div>
-                        <div class="flex gap-2 items-end h-16">
-                            <div class="w-1/6 bg-gray-700 rounded-t h-2/5"></div>
-                            <div class="w-1/6 bg-gray-700 rounded-t h-3/5"></div>
-                            <div class="w-1/6 bg-gray-700 rounded-t h-1/5"></div>
-                            <div class="w-1/6 bg-gray-700 rounded-t h-4/5"></div>
-                            <div class="w-1/6 bg-brand-accent rounded-t h-full shadow-[0_0_10px_#00f0ff]"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- BUILD -->
+<section id="build" class="b"><div class="glow" style="background:#35BDF6;top:0;right:-10%"></div><div class="wrap">
+  <div class="div-head rv"><div class="big">01</div><div>
+    <span class="eyebrow">BUILD</span><h2>Technology &amp; Digital Products</h2>
+    <p class="lead">We turn ideas into fast, useful and scalable digital products — from simple websites and landing pages to e-commerce stores, automation systems, SaaS products and custom business applications.</p></div></div>
+  <h3 class="sub">BUILD Services</h3><div class="grid3" id="buildGrid"></div>
+  <h3 class="sub">BUILD Process</h3><div class="steps" id="buildSteps"></div>
+  <h3 class="sub">Why BUILD with AVENOR</h3>
+  <div class="chips"><span>Responsive Development</span><span>Performance Focus</span><span>Clean UI/UX</span><span>Business-First Approach</span><span>Custom Solutions</span><span>Scalable Architecture</span><span>Post-Launch Support</span></div>
+  <div class="note"><b>30-Day Zero-Bug Policy</b><p>Covered bugs caused by our delivered implementation are fixed during the first 30 days after launch. New features and scope changes are not included.</p></div>
+  <div class="dcta"><h3>Have an idea? Let's build it.</h3><a href="#contact" data-div="BUILD" class="btn btn-p pick">Start Your Project →</a></div>
+</div></section>
 
-    <!-- 3. WHAT WE DO & THE 10% BRIDGE -->
-    <section id="services" class="py-24 bg-brand-charcoal/30 border-y border-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">The AVENOR Ecosystem</h2>
-                <div class="bg-black border border-gray-800 p-6 rounded-xl max-w-4xl mx-auto mt-6 shadow-xl">
-                    <p class="text-lg text-gray-300 leading-relaxed">
-                        We are a <strong>Full-Service Web Development & Marketing Agency</strong>. But we do things differently. 
-                        Alongside building robust digital platforms, we act as a transparent bridge between <strong>Brands and Creators</strong>. We charge a flat <strong>10% commission</strong> from both sides. No hidden fees. Just pure, scalable growth.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                <div class="p-8 rounded-2xl bg-brand-accent/5 border border-brand-accent/20 hover:border-brand-accent/50 transition-colors">
-                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-brand-accent text-3xl mr-3">🏢</span> For Brands</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>✔️ Access to verified, high-engagement influencers.</li>
-                        <li>✔️ Automated checks for fake followers/bot engagement.</li>
-                        <li>✔️ Secure escrow payments & guaranteed content delivery.</li>
-                    </ul>
-                </div>
-                <div class="p-8 rounded-2xl bg-purple-500/5 border border-purple-500/20 hover:border-purple-500/50 transition-colors">
-                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-purple-400 text-3xl mr-3">🎥</span> For Creators</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>✔️ Direct access to premium, high-paying brand deals.</li>
-                        <li>✔️ Crystal clear briefs—no communication gaps.</li>
-                        <li>✔️ Guaranteed, on-time payments directly to your account.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- GROW -->
+<section id="grow" class="g alt"><div class="glow" style="background:#FF3048;top:0;left:-10%"></div><div class="wrap">
+  <div class="div-head rv"><div class="big">02</div><div>
+    <span class="eyebrow">GROW</span><h2>Marketing &amp; Performance</h2>
+    <p class="lead">We help businesses get attention, reach the right audience, generate leads and turn marketing activity into measurable business growth.</p></div></div>
+  <h3 class="sub">GROW Services</h3><div class="grid3" id="growGrid"></div>
+  <h3 class="sub">GROW Focus</h3>
+  <div class="flow"><span>Attention</span><i>→</i><span>Audience</span><i>→</i><span>Leads</span><i>→</i><span>Conversion</span><i>→</i><span>Optimization</span><i>→</i><span>Growth</span></div>
+  <h3 class="sub">GROW Process</h3><div class="steps" id="growSteps"></div>
+  <div class="dcta"><h3>Ready to grow your business?</h3><a href="#contact" data-div="GROW" class="btn btn-p pick">Talk to AVENOR →</a></div>
+</div></section>
 
-    <!-- 4. OUR COMPREHENSIVE SERVICES -->
-    <section id="full-services" class="py-24 relative">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-[150px] -z-10"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Everything You Need To Scale</h2>
-                <p class="text-gray-400 text-lg">End-to-end solutions combining robust tech and aggressive marketing.</p>
-            </div>
+<!-- CONNECT -->
+<section id="connect" class="c"><div class="glow" style="background:#9B6CFF;top:0;right:-10%"></div><div class="wrap">
+  <div class="div-head rv"><div class="big">03</div><div>
+    <span class="eyebrow">CONNECT</span><h2>Influencer Marketing &amp; Brand Deals</h2>
+    <p class="lead">We connect brands with relevant creators and help coordinate influencer campaigns, creator discovery, brand deals and campaign execution.</p></div></div>
+  <h3 class="sub">CONNECT Services</h3><div class="grid4" id="connGrid"></div>
+  <div class="commission rv" style="margin-top:56px"><span class="eyebrow">Simple Commission Model</span><div class="num">10%</div><h3>Commission Per Deal</h3><p>A simple and transparent commission model for successful brand–creator deals.</p></div>
+  <h3 class="sub">CONNECT Workflow</h3><div class="steps" id="connSteps"></div>
+  <div class="grid2c" style="margin-top:40px">
+    <div class="card rv"><span class="eyebrow">For Brands</span><ul><li>Creator Discovery</li><li>Creator Matching</li><li>Campaign Planning</li><li>Campaign Coordination</li><li>Content Tracking</li><li>Deal Coordination</li></ul><a href="brand.html" class="btn btn-p sm">Find Creators →</a></div>
+    <div class="card rv"><span class="eyebrow">For Creators</span><ul><li>Brand Opportunities</li><li>Creator Network</li><li>Campaign Briefs</li><li>Collaboration Opportunities</li><li>Campaign Coordination</li><li>Deal Opportunities</li></ul><a href="creator.html" class="btn btn-p sm">Join Creator Network →</a></div>
+  </div>
+  <div class="dcta"><h3>Let's create the right connection.</h3><a href="#contact" data-div="CONNECT" class="btn btn-p pick">Start a Campaign →</a></div>
+</div></section>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                <!-- Digital Marketing Sub-Services -->
-                <div class="glass-card p-8 rounded-3xl border-t-4 border-t-brand-accent">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-14 h-14 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent text-3xl">
-                            🚀
-                        </div>
-                        <h3 class="text-2xl font-bold text-white">Digital Marketing</h3>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Performance Marketing</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Google Ads</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Facebook Ads</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Instagram Ads</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> SEO</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Local SEO</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Social Media Marketing</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Influencer Marketing</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> WhatsApp Marketing</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Email Marketing</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Content Marketing</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-accent">⚡</span> Branding</div>
-                    </div>
-                </div>
+<!-- WHY -->
+<section id="why" class="alt"><div class="wrap">
+  <div class="center rv"><span class="eyebrow" style="color:var(--tx2)">Why AVENOR</span><h2>Why AVENOR?</h2></div>
+  <div class="grid3" id="whyGrid" style="margin-top:44px"></div>
+</div></section>
 
-                <!-- Web Development Sub-Services -->
-                <div class="glass-card p-8 rounded-3xl border-t-4 border-t-brand-neon">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-14 h-14 bg-brand-neon/10 rounded-2xl flex items-center justify-center text-brand-neon text-3xl">
-                            💻
-                        </div>
-                        <h3 class="text-2xl font-bold text-white">Web Development</h3>
-                    </div>
+<!-- HOW WE WORK -->
+<section id="how"><div class="wrap">
+  <div class="center rv"><span class="eyebrow" style="color:var(--tx2)">Process</span><h2>How We Work</h2></div>
+  <div class="steps" id="howSteps" style="margin-top:44px"></div>
+</div></section>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Business Website</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Landing Page</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Portfolio Website</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Ecommerce Website</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> SaaS Website</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Dashboard</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> CRM</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Web App</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> UI/UX Design</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Speed Optimization</div>
-                        <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"><span class="text-brand-neon">⚡</span> Website Maintenance</div>
-                    </div>
-                </div>
+<!-- PRICING OVERVIEW -->
+<section id="pricing" class="alt"><div class="wrap center">
+  <div class="rv"><span class="eyebrow" style="color:var(--tx2)">Pricing Overview</span><h2>Clear Starting Prices</h2></div>
+  <div class="grid3" style="margin-top:40px">
+    <div class="ov b rv"><h3>BUILD</h3><p>Starting from ₹999</p></div>
+    <div class="ov g rv"><h3>GROW</h3><p>Starting from ₹1,499</p></div>
+    <div class="ov c rv"><h3>CONNECT</h3><p>10% Commission Per Deal</p></div>
+  </div>
+  <p class="lead" style="margin-top:28px"><strong>Custom projects are quoted according to scope and requirements.</strong></p>
+</div></section>
 
-            </div>
-        </div>
-    </section>
+<!-- FAQ -->
+<section id="faq"><div class="wrap">
+  <div class="center rv"><span class="eyebrow" style="color:var(--tx2)">FAQ</span><h2>Frequently Asked Questions</h2></div>
+  <div class="faq" id="faqList"></div>
+</div></section>
 
-    <!-- 5. OUR PROCESS -->
-    <section id="process" class="py-24 bg-brand-charcoal/30 border-y border-gray-900 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-16">How We Make It Happen</h2>
-            
-            <div class="flex flex-wrap justify-center gap-y-10 gap-x-4">
-                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
-                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-brand-neon group-hover:shadow-[0_0_15px_#39FF14] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">1</div>
-                    <p class="text-gray-300 font-medium">Discovery</p>
-                </div>
-                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
-                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-brand-neon group-hover:shadow-[0_0_15px_#39FF14] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">2</div>
-                    <p class="text-gray-300 font-medium">Research</p>
-                </div>
-                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
-                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-brand-neon group-hover:shadow-[0_0_15px_#39FF14] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">3</div>
-                    <p class="text-gray-300 font-medium">Strategy</p>
-                </div>
-                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
-                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-brand-accent group-hover:shadow-[0_0_15px_#00f0ff] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">4</div>
-                    <p class="text-gray-300 font-medium">Design</p>
-                </div>
-                <div class="relative w-32 md:w-40 flex flex-col items-center group md:process-line lg:process-line">
-                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-brand-accent group-hover:shadow-[0_0_15px_#00f0ff] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">5</div>
-                    <p class="text-gray-300 font-medium">Development</p>
-                </div>
-                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
-                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-purple-400 group-hover:shadow-[0_0_15px_#c084fc] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">6</div>
-                    <p class="text-gray-300 font-medium">Testing</p>
-                </div>
-                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
-                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-purple-400 group-hover:shadow-[0_0_15px_#c084fc] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">7</div>
-                    <p class="text-gray-300 font-medium">Launch</p>
-                </div>
-                <div class="relative w-32 md:w-40 flex flex-col items-center process-line group">
-                    <div class="w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 group-hover:border-yellow-400 group-hover:shadow-[0_0_15px_#facc15] flex items-center justify-center text-xl font-bold text-white mb-4 transition-all z-10">8</div>
-                    <p class="text-gray-300 font-medium">Marketing</p>
-                </div>
-                <div class="relative w-32 md:w-40 flex flex-col items-center group">
-                    <div class="w-16 h-16 rounded-full bg-brand-neon border-2 border-brand-neon shadow-[0_0_20px_#39FF14] flex items-center justify-center text-xl font-bold text-black mb-4 transition-all z-10">🚀</div>
-                    <p class="text-brand-neon font-bold">Growth</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FINAL CTA -->
+<section class="alt"><div class="wrap"><div class="fin rv">
+  <h2>Where Vision Becomes Influence.</h2>
+  <p class="lead">Build the product. Grow the business. Connect with the right creators.</p>
+  <div class="cta-row" style="justify-content:center"><a href="#contact" class="btn btn-w">Start a Project →</a></div>
+</div></div></section>
 
-    <!-- 6. TRANSPARENT PRICING MATRIX -->
-    <section id="pricing" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Web Development Pricing</h2>
-                <p class="text-gray-400 text-lg">Robust architecture built to scale your digital presence.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
-                <div class="glass-card p-6 rounded-xl flex flex-col justify-between">
-                    <div><h4 class="text-white font-semibold mb-1">Mini Portfolio</h4><p class="text-xs text-gray-500 mb-4">Perfect for personal brands.</p></div>
-                    <div class="text-2xl font-bold text-brand-neon">₹999</div>
-                </div>
-                <div class="glass-card p-6 rounded-xl flex flex-col justify-between">
-                    <div><h4 class="text-white font-semibold mb-1">Single Landing Page</h4><p class="text-xs text-gray-500 mb-4">High-conversion focused.</p></div>
-                    <div class="text-2xl font-bold text-brand-neon">₹1,999</div>
-                </div>
-                <div class="glass-card p-6 rounded-xl flex flex-col justify-between border-brand-accent/30">
-                    <div><h4 class="text-white font-semibold mb-1">Business Website</h4><p class="text-xs text-gray-500 mb-4">4-5 pages, responsive.</p></div>
-                    <div class="text-2xl font-bold text-brand-accent">₹4,999</div>
-                </div>
-                <div class="glass-card p-6 rounded-xl flex flex-col justify-between border-brand-accent/30">
-                    <div><h4 class="text-white font-semibold mb-1">Full-Stack Web App</h4><p class="text-xs text-gray-500 mb-4">Custom SaaS & Dashboards.</p></div>
-                    <div class="text-3xl font-bold text-white">₹15K<span class="text-lg text-gray-500">+</span></div>
-                </div>
-            </div>
+<!-- CONTACT -->
+<section id="contact"><div class="wrap">
+  <div class="center rv"><span class="eyebrow" style="color:var(--tx2)">Contact</span><h2>Let's Build Something Great</h2>
+  <p class="lead">Tell us about your project and we'll get back to you. Brands and creators can also use their dedicated pages.</p></div>
+  <form id="contactForm">
+    <div class="row"><div><label for="formName">Name</label><input type="text" id="formName" placeholder="Your name" required></div>
+    <div><label for="formEmail">Email</label><input type="email" id="formEmail" placeholder="you@company.com" required></div></div>
+    <div class="row"><div><label for="formPhone">Phone</label><input type="tel" id="formPhone" placeholder="+91 98765 43210" required></div>
+    <div><label for="formCompany">Company / Brand</label><input type="text" id="formCompany" placeholder="Company or brand name"></div></div>
+    <div class="row"><div><label for="formDivision">Division</label><select id="formDivision"><option>BUILD</option><option>GROW</option><option>CONNECT</option><option>General Inquiry</option></select></div>
+    <div><label for="formType">Project Type</label><input type="text" id="formType" placeholder="e.g. Business website, Meta Ads, Creator campaign"></div></div>
+    <div><label for="formBudget">Budget</label><select id="formBudget"><option>Under ₹2,000</option><option>₹2,000 – ₹5,000</option><option>₹5,000 – ₹10,000</option><option>₹10,000 – ₹25,000</option><option>₹25,000+</option><option selected>Custom / Not Sure</option></select></div>
+    <div><label for="formMessage">Message</label><textarea id="formMessage" rows="4" placeholder="Tell us about your goals" required></textarea></div>
+    <div id="formStatus" role="status"></div>
+    <button type="submit" id="submitBtn" class="btn btn-w" style="width:100%">Send Project Request →</button>
+  </form>
+  <div class="links2"><a href="brand.html" class="btn btn-o">Go to Brands Page</a><a href="creator.html" class="btn btn-o">Go to Creators Page</a></div>
+</div></section>
+</main>
 
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Marketing Retainers</h2>
-                <p class="text-gray-400 text-lg">Stop paying for vanity metrics. Start paying for ROI.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold text-white mb-2">Starter Growth Pack</h3>
-                    <p class="text-sm text-gray-400 mb-6">Organic Social Media & Visibility</p>
-                    <div class="text-4xl font-black text-brand-neon mb-6">Custom<span class="text-lg text-gray-500 font-normal"> /mo</span></div>
-                    <ul class="space-y-4 text-gray-300 text-sm mb-8">
-                        <li>✔️ 12-15 Content Pieces (Reels/Graphics)</li>
-                        <li>✔️ Profile Optimization & Setup</li>
-                        <li>✔️ Basic Local SEO (GMB Management)</li>
-                        <li>✔️ Monthly Analytics Report</li>
-                    </ul>
-                </div>
-                <div class="glass-card p-8 rounded-2xl border-brand-accent/50 relative transform md:-translate-y-4">
-                    <div class="absolute top-0 right-0 bg-brand-accent text-black text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">MOST POPULAR</div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Performance Booster</h3>
-                    <p class="text-sm text-brand-accent mb-6">Lead Gen & Direct Sales Ads</p>
-                    <div class="text-4xl font-black text-white mb-6">Custom<span class="text-lg text-gray-500 font-normal"> /mo</span></div>
-                    <ul class="space-y-4 text-gray-300 text-sm mb-8">
-                        <li>✔️ Meta & Google Ads Management</li>
-                        <li>✔️ High-Converting Ad Copy & Creative Strategy</li>
-                        <li>✔️ Retargeting Funnel Setup</li>
-                        <li>✔️ Weekly Performance Audits (Targeted ROAS)</li>
-                    </ul>
-                </div>
-                <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold text-white mb-2">Enterprise Dominance</h3>
-                    <p class="text-sm text-gray-400 mb-6">Full Tech + Marketing Handover</p>
-                    <div class="text-4xl font-black text-purple-400 mb-6">Custom</div>
-                    <ul class="space-y-4 text-gray-300 text-sm mb-8">
-                        <li>✔️ Performance Ads + SEO</li>
-                        <li>✔️ Premium Influencer Tie-ups (10% Network)</li>
-                        <li>✔️ Custom Automation Bots (WhatsApp)</li>
-                        <li>✔️ Priority 24/7 Support</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer><div class="wrap">
+  <div class="fg">
+    <div><a href="#top" class="logo"><i>A</i>AVENOR</a><p><strong>Where Vision Becomes Influence.</strong></p><p>A 3-in-1 agency helping businesses BUILD through technology, GROW through marketing and CONNECT through creator partnerships.</p></div>
+    <div class="b"><h4 style="color:var(--p)">BUILD</h4><ul><li><a href="#build">Websites</a></li><li><a href="#build">Automation</a></li><li><a href="#build">Web Apps</a></li></ul></div>
+    <div class="g"><h4 style="color:var(--p)">GROW</h4><ul><li><a href="#grow">Ads</a></li><li><a href="#grow">SEO</a></li><li><a href="#grow">Social &amp; Content</a></li></ul></div>
+    <div class="c"><h4 style="color:var(--p)">CONNECT</h4><ul><li><a href="brand.html">For Brands</a></li><li><a href="creator.html">For Creators</a></li><li><a href="#connect">10% Per Deal</a></li></ul></div>
+    <div><h4>COMPANY</h4><ul><li><a href="#about">About</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
+  </div>
+  <div class="fb"><span>© 2026 AVENOR. All Rights Reserved.</span><span>Where Vision Becomes Influence.</span></div>
+</div></footer>
 
-    <!-- 7. WHY CHOOSE US & TRUST BUILDERS -->
-    <section id="trust" class="py-24 bg-black border-t border-gray-900">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Why Choose Us</h2>
-                <p class="text-gray-400 text-lg">We don't just deliver projects, we partner in your growth.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-                <div class="glass-card p-4 rounded-xl flex flex-col items-center justify-center text-center hover:border-brand-neon/40">
-                    <div class="text-brand-neon text-2xl font-bold mb-2">✓</div><h4 class="text-white font-semibold text-sm">ROI Focused</h4>
-                </div>
-                <div class="glass-card p-4 rounded-xl flex flex-col items-center justify-center text-center hover:border-brand-neon/40">
-                    <div class="text-brand-neon text-2xl font-bold mb-2">✓</div><h4 class="text-white font-semibold text-sm">Experienced Team</h4>
-                </div>
-                <div class="glass-card p-4 rounded-xl flex flex-col items-center justify-center text-center hover:border-brand-neon/40">
-                    <div class="text-brand-neon text-2xl font-bold mb-2">✓</div><h4 class="text-white font-semibold text-sm">Transparent Pricing</h4>
-                </div>
-                <div class="glass-card p-4 rounded-xl flex flex-col items-center justify-center text-center hover:border-brand-neon/40">
-                    <div class="text-brand-neon text-2xl font-bold mb-2">✓</div><h4 class="text-white font-semibold text-sm">Fast Delivery</h4>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-gray-900/50 border border-gray-800 p-8 rounded-2xl hover:border-brand-neon/50 transition-colors">
-                    <div class="w-12 h-12 bg-brand-neon/10 rounded-lg flex items-center justify-center text-brand-neon text-2xl mb-6">🛡️</div>
-                    <h4 class="text-xl font-bold text-white mb-3">The "No-BS" Guarantee</h4>
-                    <p class="text-gray-400 mb-4"><strong>Tech:</strong> 30-Day Zero-Bug Policy. Launch ke baad 30 dino tak FREE support.</p>
-                    <p class="text-gray-400"><strong>Marketing:</strong> ROI-First Commitment. Result aane tak optimizations bilkul free.</p>
-                </div>
-                <div class="bg-gray-900/50 border border-gray-800 p-8 rounded-2xl hover:border-brand-accent/50 transition-colors">
-                    <div class="w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center text-brand-accent text-2xl mb-6">🤝</div>
-                    <h4 class="text-xl font-bold text-white mb-3">100% Escrow & Transparency</h4>
-                    <p class="text-gray-400 mb-4"><strong>Brands:</strong> Milestones approve hone ke baad hi payout jata hai. Zero hidden margins.</p>
-                    <p class="text-gray-400"><strong>Creators:</strong> Brief fulfill hone par instant 100% payout guarantee.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+var BUILD=[["Mini Portfolio","₹999","A clean and simple portfolio for students, freelancers or individuals who need a professional online presence."],["Landing Page","₹1,999","A focused single-page website designed to present a product, service, campaign or offer."],["Portfolio Website","₹2,999","A professional multi-section portfolio to showcase work, skills, projects and personal brand."],["Business Website","₹4,999","A complete professional website for businesses that need a strong online presence."],["Premium Business Website","₹7,999","A more advanced website with premium UI, enhanced interactions and additional business-focused functionality."],["E-commerce Website","₹9,999","An online store for businesses that want to showcase and sell products online."],["Telegram Bot","₹2,999","Custom Telegram bots for automation, communication, customer interaction and business workflows."],["Automation System","₹4,999","Automate repetitive tasks and connect business workflows to reduce manual work."],["UI/UX Design","₹1,999","Modern interface and user-experience design focused on usability, clarity and visual quality."],["Dashboard","₹7,999","Custom dashboards to manage, monitor and visualize business information."],["CRM","₹9,999","A custom customer-management system for organizing leads, customers and business operations."],["Web Application","₹14,999+","Custom web applications built around specific business requirements."],["SaaS MVP","₹24,999+","A functional first version of a SaaS product designed to validate and launch an idea."],["API Integration","₹1,999+","Connect websites and applications with external APIs and services."],["Website Maintenance","₹999/month","Ongoing updates, fixes, improvements and technical maintenance."]];
+var GROW=[["Marketing Strategy","₹1,499","A focused marketing roadmap based on your business, audience, goals and growth opportunities."],["Social Media Management","₹2,999/month","Content planning, social media management and consistent brand communication."],["Google Ads Management","₹2,999/month","Campaign setup, management and optimization for Google advertising."],["Meta Ads Management","₹2,999/month","Facebook and Instagram advertising focused on reaching relevant audiences and generating results."],["Performance Marketing","₹4,999/month","A broader performance-focused approach combining campaigns, optimization and measurement."],["SEO","₹2,999/month","Improve search visibility through on-page, technical and content-focused SEO."],["Local SEO","₹1,999/month","Help local businesses improve their visibility in local search and Google results."],["Content Marketing","₹2,499/month","Strategic content designed to communicate your value and attract your target audience."],["WhatsApp Marketing","₹1,999/month","Use WhatsApp as a communication and marketing channel for customer engagement."],["Email Marketing","₹1,999/month","Email campaigns and communication strategies for customer engagement and retention."],["Branding Starter","₹2,499","Create a consistent visual direction for your business and brand."],["Ad Creative Design","₹299/creative","Professional advertising creatives designed for digital campaigns."]];
+var CONN=[["Influencer Marketing","Plan and coordinate influencer campaigns around a brand's goals and audience."],["Creator Discovery","Find creators relevant to a particular campaign, niche and target audience."],["Creator Matching","Match brands with creators based on campaign requirements."],["Brand–Creator Deals","Help coordinate collaboration opportunities between brands and creators."],["Creator Verification","Review creator information and campaign suitability before collaboration."],["Campaign Coordination","Coordinate communication, campaign requirements, timelines and deliverables."],["Content Delivery Coordination","Help manage campaign content submission and delivery."],["Creator Network","Build access to a growing network of creators across different niches."]];
+var WHY=[["One Agency","Marketing, technology and creator partnerships under one roof."],["Business First","Every service is built around an actual business objective."],["Transparent Pricing","Clear starting prices with scope-based pricing for complex work."],["Modern Execution","Modern technology, creative thinking and performance-focused execution."],["Flexible","Work with AVENOR for one service or across multiple divisions."],["Long-Term Partnership","We aim to build long-term business relationships, not one-time transactions."]];
+var HOW=[["DISCOVER","Understand the business, goals and requirements."],["RESEARCH","Study audience, competitors and opportunities."],["STRATEGIZE","Build the right roadmap."],["CREATE","Design campaigns, products or partnerships."],["EXECUTE","Launch and manage the work."],["OPTIMIZE","Measure results and improve performance."],["GROW","Scale what works."]];
+var FAQ=[["What is AVENOR?","AVENOR is a 3-in-1 agency that helps businesses build digital products, grow through marketing and connect with the right creators."],["What are the three AVENOR divisions?","BUILD (Technology & Digital Products), GROW (Marketing & Performance) and CONNECT (Influencer Marketing & Brand Deals)."],["Can I hire only one division?","Yes. You can work with AVENOR for a single service or across multiple divisions."],["Can I combine BUILD and GROW?","Absolutely. Many businesses pair a website or product with marketing so both work together. Tell us your goals and we'll shape the right combination."],["What is included in website pricing?","Each website service lists its starting price and a description of what it covers. Final scope depends on your requirements, and we confirm it with you before work begins."],["Do you provide custom development?","Yes. Web applications, dashboards, CRMs, automation systems, SaaS MVPs and API integrations are built around your specific requirements."],["Do you provide monthly marketing?","Yes. Many GROW services, such as social media, ads, SEO and content, are offered as monthly services."],["How does the 10% commission work?","CONNECT works on a simple 10% commission per deal for successful brand–creator deals."],["Can brands work with creators through AVENOR?","Yes. We help with creator discovery, matching, campaign coordination and content delivery. Visit the Brands page to get started."],["Can creators join the AVENOR network?","Yes. Creators can join the network to receive brand opportunities and campaign briefs through the Creators page."],["How do I start a project?","Fill in the contact form with your division, project type and budget, and we'll get in touch to discuss next steps."]];
+var $=function(i){return document.getElementById(i)};
+function cards(id,list,priced,cta){
+  $(id).innerHTML=list.map(function(s){
+    var d=priced?s[2]:s[1];
+    return '<article class="card rv"><h3>'+s[0]+'</h3>'+(priced?'<div class="price">'+s[1].replace(/(\/.*)/,'<small>$1</small>')+'</div>':'')+'<p>'+d+'</p>'+(cta?'<a href="#contact" data-div="'+cta+'" data-type="'+s[0]+'" class="btn btn-o sm pick">Get Started →</a>':'')+'</article>';
+  }).join('');
+}
+function steps(id,list,desc){
+  $(id).innerHTML=list.map(function(s,i){
+    var n=(i+1<10?'0':'')+(i+1);
+    return '<div class="step rv"><b>'+n+'</b><h4>'+(desc?s[0]:s)+'</h4>'+(desc?'<p>'+s[1]+'</p>':'')+'</div>';
+  }).join('');
+}
+cards('buildGrid',BUILD,true,'BUILD');cards('growGrid',GROW,true,'GROW');cards('connGrid',CONN,false,null);
+$('whyGrid').innerHTML=WHY.map(function(w){return '<div class="card rv"><h3>'+w[0]+'</h3><p>'+w[1]+'</p></div>'}).join('');
+steps('buildSteps',["Discovery","Research","Architecture","UI/UX","Development","Testing","Launch","Support"]);
+steps('growSteps',["Discovery","Research","Strategy","Creative","Launch","Measure","Optimize","Scale"]);
+steps('connSteps',["Brand Requirement","Creator Discovery","Matching","Brief & Negotiation","Deal Confirmation","Content Creation","Review & Delivery","Campaign Completion"]);
+steps('howSteps',HOW,true);
+$('faqList').innerHTML=FAQ.map(function(f){return '<details class="rv"><summary>'+f[0]+'</summary><div class="ans"><div><p>'+f[1]+'</p></div></div></details>'}).join('');
 
-    <!-- 8. SIMPLE CONTACT SECTION -->
-    <section id="contact" class="py-24 relative bg-brand-charcoal/20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Let's Build Something Great</h2>
-                <p class="text-gray-400 text-lg">Drop us a message below or visit our dedicated Brand/Creator pages.</p>
-            </div>
+// reveal
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
 
-            <!-- Standard Form with Bot Integration -->
-            <div class="glass-card p-8 md:p-10 rounded-3xl border border-gray-800 mb-8 shadow-2xl">
-                <form id="contactForm" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Name</label>
-                            <input type="text" id="formName" placeholder="Your Name" required class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Email</label>
-                            <input type="email" id="formEmail" placeholder="you@company.com" required class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Phone</label>
-                            <input type="tel" id="formPhone" placeholder="+91 98765 43210" required class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Service Needed</label>
-                            <select id="formService" class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors">
-                                <option class="bg-black">Web Development</option>
-                                <option class="bg-black">Performance Marketing</option>
-                                <option class="bg-black">General Inquiry</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Message</label>
-                        <textarea id="formMessage" rows="4" placeholder="How can we help you scale?" required class="w-full bg-black/60 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-neon transition-colors"></textarea>
-                    </div>
+// theme
+var root=document.documentElement,tb=$('theme');
+function setIcon(){tb.textContent=root.getAttribute('data-theme')==='dark'?'☾':'☀'}
+setIcon();
+tb.addEventListener('click',function(){var n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('avenor-theme',n)}catch(e){}setIcon()});
 
-                    <!-- Inline status message area -->
-                    <div id="formStatus" class="hidden text-center py-3 px-4 rounded-xl font-semibold text-sm"></div>
+// mobile nav
+var bg=$('burger'),lk=$('links');
+bg.addEventListener('click',function(){var o=lk.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
+lk.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){lk.classList.remove('open')})});
 
-                    <button type="submit" id="submitBtn" class="btn-neon w-full py-4 rounded-xl font-bold text-lg">Send Message</button>
-                </form>
-            </div>
+// preselect division from CTAs
+document.querySelectorAll('.pick').forEach(function(a){a.addEventListener('click',function(){
+  var d=a.getAttribute('data-div'),t=a.getAttribute('data-type');
+  if(d)$('formDivision').value=d;if(t)$('formType').value=t;
+})});
 
-            <!-- Links to separate pages -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                <a href="brand.html" class="px-8 py-3 rounded-full border border-gray-700 bg-gray-900/50 text-gray-300 hover:border-brand-accent hover:text-white transition-all text-center font-semibold flex items-center justify-center gap-2">
-                    🏢 Go to Brands Page
-                </a>
-                <a href="creator.html" class="px-8 py-3 rounded-full border border-gray-700 bg-gray-900/50 text-gray-300 hover:border-purple-400 hover:text-white transition-all text-center font-semibold flex items-center justify-center gap-2">
-                    🎥 Go to Creators Page
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. FOOTER -->
-    <footer class="bg-black border-t border-gray-900 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center">
-                    <div class="w-8 h-8 rounded bg-gradient-to-br from-brand-neon to-brand-accent flex items-center justify-center font-bold text-black text-lg mr-2">A</div>
-                    <span class="font-bold text-lg tracking-tight text-white">AVENOR</span>
-                </div>
-                <p class="text-gray-500 text-sm text-center">© 2026 AVENOR Agency. All rights reserved. Built for revenue & scale.</p>
-                <div class="flex space-x-6 text-gray-400 text-sm">
-                    <a href="#services" class="hover:text-white transition-colors">Services</a>
-                    <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
-                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- TELEGRAM BOT FUNCTIONALITY -->
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const submitBtn = document.getElementById('submitBtn');
-            const statusDiv = document.getElementById('formStatus');
-
-            submitBtn.innerText = "Sending...";
-            submitBtn.disabled = true;
-            statusDiv.className = "hidden"; // Reset status visibility
-
-            const name = document.getElementById('formName').value;
-            const email = document.getElementById('formEmail').value;
-            const phone = document.getElementById('formPhone').value;
-            const service = document.getElementById('formService').value;
-            const message = document.getElementById('formMessage').value;
-
-            // ⚠️ APNA BOT TOKEN AUR CHAT ID YAHAN PASTE KAREIN
-            const BOT_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'; 
-            const CHAT_ID = 'YOUR_TELEGRAM_CHAT_ID';
-
-            const telegramMessage = `📩 *New Lead Received (AVENOR)*\n\n` +
-                                    `👤 *Name:* ${name}\n` +
-                                    `📧 *Email:* ${email}\n` +
-                                    `📞 *Phone:* ${phone}\n` +
-                                    `🛠 *Service:* ${service}\n` +
-                                    `💬 *Message:* ${message}`;
-
-            try {
-                const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        chat_id: CHAT_ID,
-                        text: telegramMessage,
-                        parse_mode: 'Markdown'
-                    })
-                });
-
-                if (response.ok) {
-                    statusDiv.className = "block text-center py-3 px-4 rounded-xl font-semibold text-sm bg-green-500/20 text-brand-neon border border-brand-neon/30 my-4";
-                    statusDiv.innerText = "✅ Message Sent Successfully!";
-                    document.getElementById('contactForm').reset();
-                } else {
-                    statusDiv.className = "block text-center py-3 px-4 rounded-xl font-semibold text-sm bg-red-500/20 text-red-400 border border-red-500/30 my-4";
-                    statusDiv.innerText = "❌ Failed to send message. Please check Bot Token or Chat ID.";
-                }
-            } catch (error) {
-                statusDiv.className = "block text-center py-3 px-4 rounded-xl font-semibold text-sm bg-red-500/20 text-red-400 border border-red-500/30 my-4";
-                statusDiv.innerText = "❌ Something went wrong. Please try again!";
-            } finally {
-                submitBtn.innerText = "Send Message";
-                submitBtn.disabled = false;
-            }
-        });
-    </script>
+// TELEGRAM BOT FUNCTIONALITY
+$('contactForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var btn=$('submitBtn'),st=$('formStatus');
+  btn.innerText="Sending...";btn.disabled=true;st.className="";st.innerText="";
+  var v=function(i){return $(i).value};
+  // ⚠️ APNA BOT TOKEN AUR CHAT ID YAHAN PASTE KAREIN
+  var BOT_TOKEN='YOUR_TELEGRAM_BOT_TOKEN';
+  var CHAT_ID='YOUR_TELEGRAM_CHAT_ID';
+  var msg='📩 *New Lead Received (AVENOR)*\n\n'+
+    '👤 *Name:* '+v('formName')+'\n'+
+    '📧 *Email:* '+v('formEmail')+'\n'+
+    '📞 *Phone:* '+v('formPhone')+'\n'+
+    '🏢 *Company:* '+(v('formCompany')||'-')+'\n'+
+    '🧭 *Division:* '+v('formDivision')+'\n'+
+    '🛠 *Project Type:* '+(v('formType')||'-')+'\n'+
+    '💰 *Budget:* '+v('formBudget')+'\n'+
+    '💬 *Message:* '+v('formMessage');
+  try{
+    var r=await fetch('https://api.telegram.org/bot'+BOT_TOKEN+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:CHAT_ID,text:msg,parse_mode:'Markdown'})});
+    if(r.ok){st.className="ok";st.innerText="✅ Message Sent Successfully!";$('contactForm').reset()}
+    else{st.className="err";st.innerText="❌ Failed to send message. Please check Bot Token or Chat ID."}
+  }catch(err){st.className="err";st.innerText="❌ Something went wrong. Please try again!"}
+  finally{btn.innerText="Send Project Request →";btn.disabled=false}
+});
+</script>
 </body>
 </html>
