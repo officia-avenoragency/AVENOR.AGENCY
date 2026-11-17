@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>AVENOR Control — Master Dashboard</title>
+<style>
+:root{color-scheme:dark;--bg:#070a10;--panel:#0d1420;--panel2:#111c2b;--line:#1d2b3d;--text:#edf3fb;--muted:#8fa0b5;--blue:#42b8f5;--red:#ff4058;--green:#38d39f;--amber:#f2b84b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#132c46 0,transparent 38%),var(--bg);color:var(--text);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+button,input{font:inherit}.shell{display:grid;grid-template-columns:250px 1fr;min-height:100vh}.side{background:#080d15;border-right:1px solid var(--line);padding:26px 18px;display:flex;flex-direction:column;gap:28px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.16em;font-size:17px}.mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(145deg,#42b8f5,#235f9e);display:grid;place-items:center;color:#06101b;font-weight:1000;box-shadow:0 8px 28px #1684c533}.subbrand{color:#7890a9;font-size:10px;letter-spacing:.2em;margin:5px 0 0 47px}.navlabel{font-size:10px;letter-spacing:.18em;color:#65788f;font-weight:800;padding:0 12px}.nav{display:grid;gap:6px}.nav a{padding:11px 12px;border-radius:10px;color:#a7b7c9;text-decoration:none;display:flex;gap:11px;align-items:center}.nav a.active,.nav a:hover{background:#132235;color:#fff}.nav a.active{box-shadow:inset 2px 0 var(--blue)}.nav .ico{width:20px;text-align:center;color:var(--blue)}.sidefoot{margin-top:auto;border-top:1px solid var(--line);padding:17px 10px;color:#7d90a7;font-size:12px}.main{min-width:0;padding:28px clamp(18px,4vw,54px) 60px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:34px}.crumb{color:var(--muted);font-size:12px}.topright{display:flex;align-items:center;gap:12px}.live{display:flex;align-items:center;gap:8px;color:#9db1c6;font-size:12px}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px #38d39f88}.btn{border:1px solid var(--line);background:#111c2b;color:#dce9f6;border-radius:9px;padding:9px 13px;cursor:pointer}.btn:hover{border-color:#3b83b6}.btn.primary{background:var(--blue);color:#05111d;border:0;font-weight:800}.btn.danger{color:#ff9aa6}.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:26px}.eyebrow{color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.23em}.hero h1{font-size:clamp(27px,4vw,39px);letter-spacing:-.045em;margin:8px 0 6px}.hero p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{background:linear-gradient(145deg,#101b2a,#0b121d);border:1px solid var(--line);border-radius:15px;padding:19px;min-width:0}.cardhead{display:flex;justify-content:space-between;align-items:center;gap:12px}.cardtitle{font-size:13px;font-weight:800}.tag{font-size:10px;letter-spacing:.08em;padding:5px 8px;border-radius:99px;background:#1a2a3d;color:#9bb0c6}.tag.ok{background:#0e3028;color:#69e2b9}.tag.warn{background:#342917;color:#f2c46c}.metric{font-size:29px;font-weight:850;letter-spacing:-.04em;margin:18px 0 2px}.hint{font-size:12px;color:var(--muted)}.section{margin-top:27px}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.sectionhead h2{font-size:16px;margin:0}.modules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.module{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:20px;display:flex;gap:15px;align-items:flex-start}.moduleicon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#102b40;color:var(--blue);font-size:20px;flex:none}.module:nth-child(2) .moduleicon{background:#301821;color:#ff7183}.module h3{font-size:15px;margin:0 0 5px}.module p{margin:0;color:var(--muted);font-size:12px}.modulefoot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:17px}.link{color:var(--blue);text-decoration:none;font-weight:750;font-size:12px}.rows{display:grid;gap:8px}.rowitem{display:flex;justify-content:space-between;align-items:center;gap:14px;background:#0b121d;border:1px solid #172638;border-radius:10px;padding:12px 14px}.rowitem strong{font-size:12px}.rowitem small{display:block;color:var(--muted);font-size:11px}.empty{padding:20px;color:var(--muted);border:1px dashed var(--line);border-radius:12px;text-align:center;font-size:12px}.loginwrap{min-height:100vh;display:grid;place-items:center;padding:20px}.login{width:min(420px,100%);padding:30px;background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 100px #0008}.login h1{margin:20px 0 5px}.login p{color:var(--muted);margin:0 0 22px}.field{display:grid;gap:7px;margin:14px 0}.field label{font-size:12px;color:#a9bbce}.field input{background:#080e17;color:#fff;border:1px solid var(--line);border-radius:9px;padding:12px;outline:none}.field input:focus{border-color:var(--blue)}.login .btn{width:100%;margin-top:10px}.error{color:#ff8997;font-size:12px;min-height:18px;margin-top:10px}.hidden{display:none!important}.note{font-size:11px;color:#758aa2;margin-top:14px}.toast{position:fixed;right:20px;bottom:20px;background:#14263a;border:1px solid #2b4864;border-radius:10px;padding:12px 16px;color:#dceeff;display:none;max-width:360px}
+@media(max-width:900px){.shell{grid-template-columns:1fr}.side{position:static;padding:15px 18px;flex-direction:row;align-items:center;justify-content:space-between;border-right:0;border-bottom:1px solid var(--line)}.navlabel,.nav,.sidefoot{display:none}.subbrand{margin-left:47px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.main{padding-top:20px}}
+@media(max-width:600px){.grid,.modules{grid-template-columns:1fr}.hero{align-items:flex-start;flex-direction:column}.top{align-items:flex-start}.live{display:none}.main{padding-left:15px;padding-right:15px}.module{padding:16px}}
+</style>
+</head>
+<body>
+<div id="loginView" class="loginwrap">
+  <form id="loginForm" class="login">
+    <div class="brand"><span class="mark">A</span><span>AVENOR</span></div>
+    <div class="subbrand">MASTER CONTROL</div>
+    <h1>Admin access</h1><p>Sign in to manage your connected workspaces.</p>
+    <div class="field"><label for="username">Admin ID</label><input id="username" name="username" autocomplete="username" required></div>
+    <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+    <button class="btn primary" type="submit">Secure sign in →</button>
+    <div id="loginError" class="error"></div>
+    <div class="note">Protected with an HttpOnly, signed admin session.</div>
+  </form>
+</div>
+<div id="appView" class="shell hidden">
+  <aside class="side">
+    <div><div class="brand"><span class="mark">A</span><span>AVENOR</span></div><div class="subbrand">MASTER CONTROL</div></div>
+    <div class="navlabel">WORKSPACE</div>
+    <nav class="nav"><a class="active" href="#overview"><span class="ico">◫</span>Overview</a><a href="#systems"><span class="ico">▦</span>Connected systems</a><a href="#activity"><span class="ico">◷</span>Agent activity</a></nav>
+    <div class="sidefoot">One command center.<br>Three independent systems.</div>
+  </aside>
+  <main class="main">
+    <header class="top"><div class="crumb">AVENOR / MASTER CONTROL / OVERVIEW</div><div class="topright"><span class="live"><i class="dot"></i> Secure session</span><button id="refresh" class="btn">↻ Refresh</button><button id="logout" class="btn danger">Sign out</button></div></header>
+    <section id="overview">
+      <div class="hero"><div><div class="eyebrow">COMMAND CENTER · 01</div><h1>Good to see you.</h1><p>Live overview of your connected business systems.</p></div><div class="hint" id="updatedAt">Waiting for first sync…</div></div>
+      <div class="grid">
+        <article class="card"><div class="cardhead"><span class="cardtitle">AI Workforce · Leads</span><span class="tag" id="wfState">Not connected</span></div><div class="metric" id="leadCount">—</div><div class="hint">Discovered business leads</div></article>
+        <article class="card"><div class="cardhead"><span class="cardtitle">AI Workforce · Audits</span><span class="tag">Overview</span></div><div class="metric" id="auditCount">—</div><div class="hint">Website audits recorded</div></article>
+        <article class="card"><div class="cardhead"><span class="cardtitle">Outreach approvals</span><span class="tag">Human approval</span></div><div class="metric" id="approvalCount">—</div><div class="hint">Drafts waiting for review</div></article>
+        <article class="card"><div class="cardhead"><span class="cardtitle">Deals</span><span class="tag">Pipeline</span></div><div class="metric" id="dealCount">—</div><div class="hint">Tracked sales opportunities</div></article>
+        <article class="card"><div class="cardhead"><span class="cardtitle">WhatsApp sessions</span><span class="tag" id="waState">Not connected</span></div><div class="metric" id="sessionCount">—</div><div class="hint">Sessions visible to the read-only API key</div></article>
+        <article class="card"><div class="cardhead"><span class="cardtitle">AI employees</span><span class="tag">4 agents</span></div><div class="metric" id="agentCount">—</div><div class="hint">Agent run records returned by Workforce</div></article>
+      </div>
+    </section>
+    <section class="section" id="systems">
+      <div class="sectionhead"><h2>Connected systems</h2><span class="hint">Independent deployments · central visibility</span></div>
+      <div class="modules">
+        <article class="module"><div class="moduleicon">◉</div><div style="flex:1;min-width:0"><h3>Lipru WhatsApp Control</h3><p>Session connectivity and WhatsApp gateway. The master dashboard uses a server-side, read-only API key.</p><div class="modulefoot"><span class="tag" id="waDetailState">Awaiting configuration</span><a class="link" href="https://lipru-whatsapp-control.onrender.com/sessions" target="_blank" rel="noopener">Open original ↗</a></div></div></article>
+        <article class="module"><div class="moduleicon">✦</div><div style="flex:1;min-width:0"><h3>Avenor AI Workforce</h3><p>Lead Hunter, Website Auditor, Outreach Writer and Sales Closer with approval-first workflows.</p><div class="modulefoot"><span class="tag" id="wfDetailState">Awaiting configuration</span><a class="link" href="https://avenor-ai-workforce-avenor.vercel.app" target="_blank" rel="noopener">Open original ↗</a></div></div></article>
+      </div>
+    </section>
+    <section class="section" id="activity"><div class="sectionhead"><h2>Recent agent activity</h2><span class="hint">From AI Workforce</span></div><div id="activityRows" class="rows"><div class="empty">Connect AI Workforce to show recent activity.</div></div></section>
+    <div class="note" id="connectionNote">Connection credentials are stored server-side only. This page never receives API keys or provider secrets.</div>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script>
+const $ = (id) => document.getElementById(id);
+function toast(message){const el=$("toast");el.textContent=message;el.style.display="block";setTimeout(()=>el.style.display="none",3500);}
+function setTag(id,text,ok){const el=$(id);el.textContent=text;el.className="tag"+(ok?" ok":" warn");}
+async function loadStatus(){
+  $("refresh").disabled=true;
+  try{
+    const response=await fetch("/api/control/status",{credentials:"same-origin",cache:"no-store"});
+    if(response.status===401){$("appView").classList.add("hidden");$("loginView").classList.remove("hidden");return;}
+    const data=await response.json();
+    if(!response.ok)throw new Error(data.error||"Unable to load dashboard.");
+    const wf=data.workforce||{},wa=data.whatsapp||{};
+    setTag("wfState",wf.connected?"Connected":wf.configured?"Connection error":"Not configured",wf.connected);
+    setTag("wfDetailState",wf.connected?"Live overview connected":wf.configured?"Check API token":"Needs integration setup",wf.connected);
+    setTag("waState",wa.connected?"Connected":wa.configured?"Connection error":"Not configured",wa.connected);
+    setTag("waDetailState",wa.connected?"Read-only connection active":wa.configured?"Check API key":"Needs read-only API key",wa.connected);
+    $("leadCount").textContent=wf.stats?.leads??"—";
+    $("auditCount").textContent=wf.stats?.audits??"—";
+    $("approvalCount").textContent=wf.stats?.pendingApprovals??"—";
+    $("dealCount").textContent=wf.stats?.deals??"—";
+    $("sessionCount").textContent=wa.connected?(wa.sessionCount??0):"—";
+    $("agentCount").textContent=wf.agents?.length??"—";
+    const activities=Array.isArray(wf.activities)?wf.activities:[];
+    $("activityRows").innerHTML=activities.length?activities.slice(0,8).map(item=>'<div class="rowitem"><div><strong>'+escapeHtml(item.title||item.agent_key||"Agent activity")+'</strong><small>'+escapeHtml(item.event_type||"Update")+' · '+escapeHtml(item.agent_key||"")+'</small></div><span class="tag">'+escapeHtml(item.severity||"info")+'</span></div>').join(""):'<div class="empty">'+(wf.connected?"No recent agent activity returned.":"Connect AI Workforce to show recent activity.")+'</div>';
+    const errors=[wf.error,wa.error].filter(Boolean);
+    $("connectionNote").textContent=errors.length?"Connection notice: "+errors.join(" · "):"Connection credentials are stored server-side only. This page never receives API keys or provider secrets.";
+    $("updatedAt").textContent="Last synced "+new Date(data.timestamp).toLocaleTimeString();
+  }catch(error){toast(error.message||"Dashboard sync failed.");}
+  finally{$("refresh").disabled=false;}
+}
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+$("loginForm").addEventListener("submit",async event=>{
+  event.preventDefault();$("loginError").textContent="";
+  const button=event.currentTarget.querySelector("button");button.disabled=true;button.textContent="Signing in…";
+  try{
+    const response=await fetch("/api/control/login",{method:"POST",headers:{"Content-Type":"application/json"},credentials:"same-origin",body:JSON.stringify({username:$("username").value,password:$("password").value})});
+    const data=await response.json();if(!response.ok)throw new Error(data.error||"Sign in failed.");
+    $("loginView").classList.add("hidden");$("appView").classList.remove("hidden");$("password").value="";await loadStatus();
+  }catch(error){$("loginError").textContent=error.message;}
+  finally{button.disabled=false;button.textContent="Secure sign in →";}
+});
+$("refresh").addEventListener("click",loadStatus);
+$("logout").addEventListener("click",async()=>{await fetch("/api/control/logout",{method:"POST",credentials:"same-origin"});$("appView").classList.add("hidden");$("loginView").classList.remove("hidden");});
+fetch("/api/control/status",{credentials:"same-origin",cache:"no-store"}).then(r=>{if(r.ok){$("loginView").classList.add("hidden");$("appView").classList.remove("hidden");loadStatus();}}).catch(()=>{});
+</script>
+</body>
+</html>
