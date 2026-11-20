@@ -391,5 +391,12 @@ $('contactForm').addEventListener('submit',async function(e){
   finally{btn.innerText="Send Project Request →";btn.disabled=false}
 });
 </script>
+<style>
+.ti-watermark{position:fixed;right:16px;bottom:14px;z-index:40;padding:7px 12px;border:1px solid var(--bd);border-radius:999px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:10px;letter-spacing:.08em;color:var(--tx2);opacity:.65;transition:opacity .25s,transform .25s}
+.ti-watermark:hover{opacity:1;transform:translateY(-2px)}
+.ti-watermark strong{color:var(--tx);font-weight:700}
+@media(max-width:480px){.ti-watermark{right:10px;bottom:10px;font-size:9px;padding:6px 10px}}
+</style>
+<div class="ti-watermark" aria-label="Website crafted by Tripathi Industries">Crafted by <strong>Tripathi Industries</strong></div>
 </body>
 </html>
